@@ -69,7 +69,7 @@ style.textContent = `
         color: var(--primary-pink);
         font-weight: 700;
     }
-    
+
     .nav-menu a.active::after {
         width: 100%;
     }
@@ -134,24 +134,26 @@ if (contactForm) {
             return;
         }
 
-        // Show success message (you can integrate with a backend service here)
+        const recipient = 'sharikaakter423sp@gmail.com';
+        const subject = encodeURIComponent(`Portfolio message from ${formData.name}`);
+        const body = encodeURIComponent(
+            `${formData.message}\n\nFrom: ${formData.name}\nReply to: ${formData.email}`
+        );
+
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
 
-        submitBtn.textContent = '✓ Message Sent!';
+        submitBtn.textContent = '✓ Opening your email app…';
         submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
 
-        // Reset form
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
         contactForm.reset();
 
-        // Reset button after 3 seconds
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.style.background = '';
         }, 3000);
-
-        // Log form data (replace with API call to your backend)
-        console.log('Form submitted:', formData);
     });
 }
 
@@ -247,8 +249,8 @@ function loadProfilePhoto() {
             const placeholder = profileImg.parentElement;
             placeholder.innerHTML = `
                 <div style="
-                    width: 100%; 
-                    height: 100%; 
+                    width: 100%;
+                    height: 100%;
                     background: linear-gradient(135deg, #d4698f, #e6d8e8);
                     border-radius: 16px;
                     display: flex;

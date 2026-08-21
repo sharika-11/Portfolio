@@ -40,7 +40,7 @@ portfolio/
 
 ### Motion
 - **Scroll**: Lenis smooth scrolling with exponential easing
-- **Animations**: 
+- **Animations**:
   - Float animations on accents
   - Fade-in/scale reveals on sections
   - Parallax hero image
