@@ -108,15 +108,18 @@
 
 ### Breakpoints
 - Mobile: < 480px
-- Tablet: 480px - 768px
-- Desktop: > 768px
+- Tablet: 480px - 968px (hamburger navigation)
+- Desktop: > 968px
 
 ### Key Adjustments
-- Navigation becomes vertical on mobile
-- Hero switches to single column
+- Hamburger toggle + slide-down drawer below 969px
+- Hero switches to single column, centered text
 - Grid layouts adapt to available space
 - Typography scales fluidly
 - Touch targets remain 48px+ minimum
+- Hover lifts gated behind `@media (hover: none)` with `:active` feedback instead
+- Parallax and mouse-tracked effects disabled on touch/coarse pointers
+- Safe-area insets respected on navbar and footer (`viewport-fit=cover`)
 
 ## Special Effects
 

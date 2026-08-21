@@ -157,19 +157,30 @@ if (contactForm) {
     });
 }
 
-// ===== Parallax Effect on Hero Section =====
+// ===== Parallax Effect on Hero Section (fine pointers on desktop only) =====
 const heroSection = document.querySelector('.hero');
 const profilePlaceholder = document.querySelector('.profile-placeholder');
+const canParallax = window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)');
 
 function parallaxHero() {
+    if (!canParallax.matches || !profilePlaceholder || !heroSection) return;
+
     const scrollTop = window.pageYOffset;
     const heroHeight = heroSection.clientHeight;
 
     if (scrollTop < heroHeight) {
         const parallaxFactor = scrollTop * 0.5;
         profilePlaceholder.style.transform = `translateY(${parallaxFactor}px)`;
+    } else {
+        profilePlaceholder.style.transform = '';
     }
 }
+
+canParallax.addEventListener('change', () => {
+    if (!canParallax.matches && profilePlaceholder) {
+        profilePlaceholder.style.transform = '';
+    }
+});
 
 window.addEventListener('scroll', parallaxHero, { passive: true });
 
@@ -184,8 +195,12 @@ function updateScrollProgress() {
 
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
-// ===== Add Sparkle Effect on Hover =====
+// ===== Add Sparkle Effect on Hover (fine pointers only) =====
+const hasFineHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
 function addSparkleEffect() {
+    if (!hasFineHover) return;
+
     const buttons = document.querySelectorAll('.btn');
 
     buttons.forEach((btn) => {
@@ -220,8 +235,10 @@ document.head.appendChild(mouseStyle);
 // Initialize sparkle effect
 addSparkleEffect();
 
-// ===== Cursor Effects =====
+// ===== Cursor Effects (fine pointers only) =====
 function initCursorEffects() {
+    if (!hasFineHover) return;
+
     const interactiveElements = document.querySelectorAll(
         'a, button, .btn, .nav-menu a, .social-btn'
     );
@@ -269,28 +286,57 @@ function loadProfilePhoto() {
 
 loadProfilePhoto();
 
-// ===== Mobile Menu Toggle (if needed for smaller screens) =====
+// ===== Mobile Menu Toggle =====
+const MOBILE_NAV_BREAKPOINT = 968;
+const navToggle = document.getElementById('navToggle');
+const navMenuEl = document.getElementById('primary-nav');
+
+function setMenuState(open) {
+    if (!navToggle || !navMenuEl) return;
+    navMenuEl.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+}
+
+function isMobileNav() {
+    return window.innerWidth <= MOBILE_NAV_BREAKPOINT;
+}
+
 function initMobileMenu() {
-    const navbar = document.querySelector('.navbar');
+    if (!navToggle || !navMenuEl) return;
 
-    // Check if we need a mobile menu button
-    if (window.innerWidth <= 768) {
-        // Mobile optimizations are already handled by CSS media queries
-        // This is just a placeholder for future mobile menu functionality
-    }
+    navToggle.addEventListener('click', () => {
+        setMenuState(!navMenuEl.classList.contains('open'));
+    });
 
+    // Close the menu after choosing a section
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => setMenuState(false));
+    });
+
+    // Close with Escape key and return focus to the toggle
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenuEl.classList.contains('open')) {
+            setMenuState(false);
+            navToggle.focus();
+        }
+    });
+
+    // Close when tapping outside the navbar
+    document.addEventListener('click', (e) => {
+        if (!navMenuEl.classList.contains('open')) return;
+        if (!e.target.closest('.navbar')) {
+            setMenuState(false);
+        }
+    });
+
+    // Reset state when returning to desktop layout
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            // Ensure nav menu is visible on larger screens
-            const navMenu = document.querySelector('.nav-menu');
-            if (navMenu) {
-                navMenu.style.display = '';
-            }
+        if (!isMobileNav()) {
+            setMenuState(false);
         }
     });
 }
-
-initMobileMenu();
 
 // ===== Accessibility: Reduce Motion Support =====
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

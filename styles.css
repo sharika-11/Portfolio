@@ -30,6 +30,7 @@
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
+    --spacing-3xl: 5rem;
 
     /* Border Radius */
     --radius-sm: 8px;
@@ -109,10 +110,13 @@ p {
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(212, 105, 143, 0.1);
     z-index: 1000;
-    padding: var(--spacing-sm) 0;
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    padding-top: max(var(--spacing-sm), env(safe-area-inset-top));
     box-shadow: var(--shadow-sm);
 }
 
@@ -185,21 +189,103 @@ p {
     width: 100%;
 }
 
-@media (max-width: 768px) {
+/* ===== Hamburger Toggle (hidden on desktop) ===== */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 48px;
+    height: 48px;
+    padding: 0 12px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-pink);
+    border-radius: 1px;
+    transition: transform var(--transition-smooth), opacity var(--transition-fast);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 968px) {
+    .nav-toggle {
+        display: inline-flex;
+    }
+
     .nav-menu {
-        flex-wrap: wrap;
-        gap: var(--spacing-sm);
-        font-size: 0.85rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(255, 255, 255, 0.97);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(212, 105, 143, 0.15);
+        box-shadow: var(--shadow-lg);
+        padding: var(--spacing-xs) var(--spacing-lg) max(var(--spacing-sm), env(safe-area-inset-bottom));
+        opacity: 0;
+        transform: translateY(-10px);
+        visibility: hidden;
+        transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth);
+    }
+
+    .nav-menu.open {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
     }
 
     .nav-menu li {
-        flex: 0 1 auto;
+        flex: none;
+        border-bottom: 1px solid var(--lavender);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        font-size: 1rem;
+    }
+
+    .nav-menu a::after {
+        display: none;
+    }
+
+    .nav-container {
+        padding: 0 var(--spacing-md);
     }
 }
 
 /* ===== Hero Section ===== */
 .hero {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -390,9 +476,20 @@ p {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding: 80px var(--spacing-lg) calc(var(--spacing-2xl) + 60px);
+        text-align: center;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-xl);
     }
 
     .profile-placeholder {
@@ -400,8 +497,36 @@ p {
         height: 280px;
     }
 
-    .hero {
-        padding: 80px var(--spacing-lg) var(--spacing-2xl);
+    .accent-1 {
+        width: 70px;
+        height: 70px;
+        top: -15px;
+        right: -20px;
+    }
+
+    .accent-2 {
+        width: 45px;
+        height: 45px;
+        left: -25px;
+    }
+
+    .accent-3 {
+        width: 55px;
+        height: 55px;
+        right: -30px;
+    }
+}
+
+@media (max-height: 640px), (max-width: 400px) {
+    .hero-scroll {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-placeholder {
+        width: 170px;
+        height: 240px;
     }
 }
 
@@ -1066,14 +1191,12 @@ p {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 968px) {
-    .nav-menu {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        align-items: flex-start;
-    }
-
     .about-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .hobbies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
@@ -1084,21 +1207,99 @@ p {
         --spacing-2xl: 2.5rem;
     }
 
+    .container,
+    .nav-container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
     .hero-cta {
         flex-direction: column;
+        width: 100%;
     }
 
     .btn {
         width: 100%;
         text-align: center;
+        min-height: 48px;
     }
 
     .section-title {
         margin-bottom: var(--spacing-lg);
     }
 
+    .education-card {
+        padding: var(--spacing-lg);
+    }
+
     .contact-form {
         padding: var(--spacing-lg);
+    }
+
+    .contact-item {
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+
+    .milestone {
+        grid-template-columns: auto 1fr;
+        column-gap: var(--spacing-md);
+        row-gap: var(--spacing-xs);
+    }
+
+    .milestone-marker {
+        grid-row: 1 / span 2;
+        align-self: start;
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        padding-bottom: max(var(--spacing-lg), env(safe-area-inset-bottom));
+    }
+}
+
+/* ===== Touch Adaptation ===== */
+@media (hover: none) {
+
+    .about-card:hover,
+    .achievement-item:hover,
+    .activity-card:hover,
+    .hobby-card:hover,
+    .milestone:hover,
+    .contact-item:hover,
+    .social-btn:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+
+    .btn-primary:active,
+    .btn-secondary:active,
+    .social-btn:active {
+        transform: scale(0.97);
+    }
+
+    .social-btn {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
     }
 }
 
