@@ -1,167 +1,65 @@
-# Design System & Implementation
+# Design System — "Pink Ruled"
 
-## Color Palette
+Recorded from the built world (index.html / styles.css / script.js). Brief-pinned by the user: shades of pink, ruled background lines, flowers, code signs, AOS animation, deliberately simple code.
 
-### Primary Colors
-- `--primary-pink: #d4698f` - Main brand color
-- `--rose: #c85a7a` - Darker pink accent
-- `--blush: #e8b4c8` - Soft pink for supporting elements
+## World
 
-### Secondary Colors
-- `--orchid: #d8a5d4` - Purple accent
-- `--lavender: #e6d8e8` - Light purple background
-- `--soft-purple: #d4c8d8` - Muted purple
+A student developer's notebook on pink graph paper. Ruled horizontal + vertical lines, botanical line work, and oversized code punctuation share one sheet. Refuses the gradient-hero / icon-card portfolio template.
 
-### Accent Colors
-- `--gold-sparkle: #f4d03f` - Sparkle highlights
-- `--champagne: #f5e6d3` - Warm neutral accent
+## Color
 
-### Neutral Colors
-- `--pale-pink: #faf5f7` - Very light background
-- `--accent-light: #f9edeb` - Section backgrounds
-- `--white: #ffffff` - Primary background
-- `--text-dark: #2d2d2d` - Primary text
-- `--text-light: #666666` - Secondary text
+Pink scale only — no gold, no purple, no gradient text.
+
+| Role | Token | Value | Use |
+|---|---|---|---|
+| Paper | `--paper` | `#fdf6f9` | Page ground |
+| Ink | `--pink-ink` | `#43242f` | Headings, body |
+| Rose (deep) | `--pink-700` | `#a13a63` | Section titles, buttons, small labels (AA-safe on paper) |
+| Rose (mid) | `--pink-500` | `#c95c86` | Flowers, code glyphs, decorative only |
+| Rose (soft) | `--pink-400` | `#d987a6` | Underlines, borders, scroll line |
+| Blush | `--pink-300/200/100` | `#e7a8c0` `#f3cfdd` `#fbe9f0` | Rules, tint washes, portrait ground |
+| Muted | `--muted` | `#75525f` | Secondary text (~5.5:1) |
+
+Contrast rules: small text never uses `--pink-500` on paper (3.7:1) — labels use `--pink-700` (6:1). Footer text is `--pink-100` on `--pink-700`.
+
+## Background graphics
+
+- **Rule grid** (`body`): two 1px `linear-gradient` layers, 56px cells, `rgba(161,58,99,0.07)`. User-pinned.
+- **Code glyphs** (`.code-glyph`): `</>`, `;`, `#`, `=>`, `{ }` in Fragment Mono, up to ~19rem, `--pink-500` at 7% opacity, absolutely placed per section, `aria-hidden`, `pointer-events: none`.
+- **Flowers**: hand-authored SVG line work (stroke only, `currentColor`), three marks — five-petal bloom, four-petal bud, sprig with leaves. Placed: hero cluster overlapping the arch portrait, 22px bud beside every section title, 26px bud above hobby columns, 16px in footer.
 
 ## Typography
 
-### Fonts
-- **Headers:** Cormorant Garamond, serif - elegant, distinctive
-- **Body:** Inter, sans-serif - clean, readable
+- **Display + body**: Bricolage Grotesque (variable, 300–800). H1 `clamp(2.7rem, 7vw, 4.9rem)` w750; H2 `clamp(1.9rem, 4.5vw, 2.8rem)` w700 in `--pink-700`.
+- **Mono**: Fragment Mono — subtitles, labels (0.72rem, uppercase, 0.14em tracking), years, skill notes, code glyphs.
 
-### Scale
-- H1: clamp(2rem, 5vw, 4rem)
-- H2: clamp(1.75rem, 4vw, 3rem)
-- H3: clamp(1.25rem, 3vw, 1.75rem)
-- Body: clamp(0.95rem, 2vw, 1.1rem)
+## Layout components
 
-### Weights
-- Regular: 400
-- Semibold: 600
-- Bold: 700
+- `.wrap`: 1080px, fluid inline padding.
+- **Hero**: 2-col grid (1.15fr/0.85fr) → 1 col ≤860px. Portrait: 3/4 arch (`border-radius: 999px 999px 26px 26px`), 1px border + offset outline ring, flower cluster overlap.
+- **Facts**: 2-col dl, mono uppercase dt, hairline top rules → 1 col ≤560px.
+- **Skills index**: full-width rows, name left / mono note right, hairline rules; no pills, no bars, no cards.
+- **Timeline**: year (mono) + content rows with hairline rules.
+- **Hobbies**: 3 text columns with flower marks, no icon tiles.
+- **Contact**: info + form (visible labels, 1rem inputs, mailto submit).
+- **Footer**: solid `--pink-700` band — pink committed at page scale.
 
-## Spacing System
-- xs: 0.5rem
-- sm: 1rem
-- md: 1.5rem
-- lg: 2rem
-- xl: 3rem
-- 2xl: 4rem
+## Motion
 
-## Depth & Shadows
-- `--shadow-sm: 0 2px 8px rgba(212, 105, 143, 0.1)` - Subtle
-- `--shadow-md: 0 4px 16px rgba(212, 105, 143, 0.15)` - Medium
-- `--shadow-lg: 0 8px 24px rgba(212, 105, 143, 0.2)` - Prominent
+- AOS 2.3.4: `fade-up` reveals, `once: true`, 700ms ease-out-cubic, disabled under `prefers-reduced-motion`.
+- Failsafe: if the AOS CDN fails, `data-aos` attributes are stripped so content never stays hidden.
+- One ambient animation only: the scroll-hint line dip.
+- Hover lifts avoided; color/border transitions only. `(hover: none)` gets `:active` scale on buttons.
 
-## Border Radius
-- sm: 8px
-- md: 12px
-- lg: 16px
-- xl: 20px
+## Responsive
 
-## Motion & Animation
-
-### Transitions
-- fast: 200ms ease
-- smooth: 400ms ease
-- slow: 600ms ease
-
-### Key Animations
-1. **Lenis Smooth Scrolling** - Duration 1.2s with exponential easing
-2. **Float** - 3s ease-in-out infinite (hero sparkles, nav brand)
-3. **Fade In** - Entrance animation with staggered timing
-4. **Scale** - Card hover effects and initial load
-5. **Parallax** - Hero image moves slower than scroll
-6. **Pulse** - Icon animation on section cards
-7. **Bounce** - Scroll indicator animation
-
-## Components
-
-### Navigation
-- Fixed navbar with backdrop blur
-- Gradient underline animation on active link
-- Responsive and accessible
-
-### Hero Section
-- Split layout (text + profile image on desktop)
-- Gradient text on main title
-- Floating accent circles with animation
-- Scroll indicator at bottom
-
-### Cards
-- White background with subtle top border
-- Hover lift effect with shadow increase
-- Icon + heading + description pattern
-- Consistent 12-16px border radius
-
-### Buttons
-- Primary (gradient pink): Active, primary CTA
-- Secondary (outlined pink): Secondary CTA
-- Hover state with lift and shadow enhancement
-
-### Forms
-- Clean input styling
-- Focus state with pink border and glow
-- Validation feedback
-
-## Responsive Design
-
-### Breakpoints
-- Mobile: < 480px
-- Tablet: 480px - 968px (hamburger navigation)
-- Desktop: > 968px
-
-### Key Adjustments
-- Hamburger toggle + slide-down drawer below 969px
-- Hero switches to single column, centered text
-- Grid layouts adapt to available space
-- Typography scales fluidly
-- Touch targets remain 48px+ minimum
-- Hover lifts gated behind `@media (hover: none)` with `:active` feedback instead
-- Parallax and mouse-tracked effects disabled on touch/coarse pointers
-- Safe-area insets respected on navbar and footer (`viewport-fit=cover`)
-
-## Special Effects
-
-### Glassmorphism
-- Navbar uses `backdrop-filter: blur(10px)` for depth
-- Subtle and purposeful, not decorative
-
-### Sparkle Theme Elements
-- Gold accent circles in hero
-- Gradient accents throughout
-- Subtle radial gradients as background elements
-- Consistent use of shimmer and float animations
+- Breakpoints: 968px (hamburger drawer), 860px (hero stacks, portrait centers), 560px (single-column everything, full-width buttons, smaller glyphs), 640px height (scroll hint hidden).
+- Touch targets ≥44px (48px in drawer/buttons); `env(safe-area-inset-*)` on navbar and footer; `viewport-fit=cover`.
 
 ## Accessibility
 
-### Contrast
-- Body text: 4.5:1 against light backgrounds (WCAG AA)
-- Interactive elements: Clear visual states
-- Color not sole information carrier
+- Semantic landmarks, visible form labels, skip-free logical tab order, `:focus-visible` rings, `aria-expanded`/`aria-label` menu state, Escape/outside-click close, decorative SVGs `aria-hidden`, alt text on portrait, WCAG AA contrast documented above.
 
-### Motion
-- Respects `prefers-reduced-motion` setting
-- Adjusts animation duration and smoothness accordingly
+## Deliberate refusals (anti-slop)
 
-### Keyboard Navigation
-- Full keyboard support via native HTML elements
-- Visible focus states on all interactive elements
-- Logical tab order
-
-### Semantic HTML
-- Proper heading hierarchy (h1, h2, h3)
-- Semantic sections and landmarks
-- Descriptive link text
-- Form labels associated with inputs
-
-## Implementation Quality
-
-- No gradient text on body content (only for heroic title as part of aesthetic)
-- Real icon library (Font Awesome) not Unicode/emoji substitutes
-- Proper shadow hierarchy - not zero-offset colored halos
-- Nested cards avoided - flat component structure
-- Measured typography scale with clear hierarchy
-- Purposeful animations - not scattered effects
-- All specified content present and polished
-- Real copy (user's actual background, not placeholders)
+No gradient text, no icon-font tiles, no card grids, no Font Awesome, no emoji glyphs, no Lenis/parallax/cursor tricks, no em-dash-saturated copy, no hover-only information.
