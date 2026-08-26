@@ -44,12 +44,16 @@ Contrast rules: small text never uses `--pink-500` on paper (3.7:1) — labels u
 - **Contact**: info + form (visible labels, 1rem inputs, mailto submit).
 - **Footer**: solid `--pink-700` band — pink committed at page scale.
 
-## Motion
+## Motion & Craft Interactions
 
-- AOS 2.3.4: `fade-up` reveals, `once: true`, 700ms ease-out-cubic, disabled under `prefers-reduced-motion`.
-- Failsafe: if the AOS CDN fails, `data-aos` attributes are stripped so content never stays hidden.
-- One ambient animation only: the scroll-hint line dip.
-- Hover lifts avoided; color/border transitions only. `(hover: none)` gets `:active` scale on buttons.
+- **AOS 2.3.4**: `fade-up` reveals, `once: true`, 700ms ease-out-cubic, disabled under `prefers-reduced-motion`.
+- **Failsafe**: if the AOS CDN fails, `data-aos` attributes are stripped so content never stays hidden.
+- **Hero Name Floral Bloom**: Hovering over "Sharika Akter Sneha" triggers a coordinated staggered cascade of hand-authored SVG flower buds, blooming petals, and sparkles.
+- **Hero Background Evasion Physics**: Floating floral marks, emojis, and mono code glyphs ambiently oscillate with harmonic sine waves; when the cursor approaches, a physics engine repels them with inverse-distance force vectors before damped spring tension smoothly returns them to their orbit.
+- **Hero Portrait Floral Shroud Reveal**: On initial page load, a dense bouquet of blooming SVG flowers and petals veils the portrait arch and dynamically blossoms and scatters outward in all directions to reveal Sharika's photo. Replayable on click/tap.
+- **Interactive Kinetic Description**: Key terms (*algorithms*, *design*, *ICPC*, *Dhaka*) feature ink-wash highlights with smooth hover expansion.
+- **Super Animated Buttons**: Solid CTA features an angled light shimmer sheen on hover and spinning blossom; Ghost CTA features "See my resume" with fill sweep and arrow glide; click ripple burst on all buttons.
+- **Header Menu**: Floating pill backdrop with spring indicator blossom and `Sneha` brand flower 180° spin.
 
 ## Responsive
 
@@ -59,7 +63,9 @@ Contrast rules: small text never uses `--pink-500` on paper (3.7:1) — labels u
 ## Accessibility
 
 - Semantic landmarks, visible form labels, skip-free logical tab order, `:focus-visible` rings, `aria-expanded`/`aria-label` menu state, Escape/outside-click close, decorative SVGs `aria-hidden`, alt text on portrait, WCAG AA contrast documented above.
+- Full `prefers-reduced-motion` compliance cleanly stops evasion physics and transitions shroud smoothly without jarring movement.
 
 ## Deliberate refusals (anti-slop)
 
-No gradient text, no icon-font tiles, no card grids, no Font Awesome, no emoji glyphs, no Lenis/parallax/cursor tricks, no em-dash-saturated copy, no hover-only information.
+No generic AI-slop, no random blue/purple neon gradients, no uncalibrated cards, no cookie-cutter templates, no hover-only essential information. Everything remains cohesive to the Pink Ruled paper world.
+
