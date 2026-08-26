@@ -79,61 +79,57 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
 
-// ===== Hero Portrait Floral Shroud Reveal on Load =====
-const floralShroud = document.getElementById('floralShroud');
-const heroPortrait = document.querySelector('.hero-portrait');
+// ===== Preloader & Site Entrance Reveal =====
+const preloader = document.getElementById('preloader');
 
-function triggerFloralReveal() {
-    if (!floralShroud) return;
-    // Brief delay to ensure initial paint shows the floral veil before blossoming open
+function dismissPreloader() {
+    if (!preloader) {
+        document.body.classList.add('site-ready');
+        return;
+    }
+
+    // Exactly 2.0 seconds preloader duration as requested
     setTimeout(() => {
-        floralShroud.classList.add('revealed');
-    }, 280);
+        preloader.classList.add('fade-out');
+        document.body.classList.add('site-ready');
+
+        // Clean up DOM node after transition finishes
+        setTimeout(() => {
+            preloader.remove();
+        }, 700);
+    }, 2000);
 }
 
 if (document.readyState === 'complete') {
-    triggerFloralReveal();
+    dismissPreloader();
 } else {
-    window.addEventListener('load', triggerFloralReveal);
+    window.addEventListener('load', dismissPreloader);
 }
 
-// Interactive replay on portrait click
-if (heroPortrait && floralShroud) {
-    heroPortrait.addEventListener('click', () => {
-        if (floralShroud.classList.contains('revealed')) {
-            floralShroud.classList.remove('revealed');
-            floralShroud.style.visibility = 'visible';
-            setTimeout(() => {
-                floralShroud.classList.add('revealed');
-            }, 600);
-        }
-    });
-}
-
-// ===== Hero Background: Floating Flower & Code Particles with Cursor Evasion Physics =====
+// ===== Hero Background: Floating Flower & Code Particles with Slower Serene Drift & Cursor Evasion =====
 const heroSection = document.getElementById('home');
 const floatingLayer = document.getElementById('heroFloatingLayer');
 
 if (heroSection && floatingLayer) {
     const particleDefinitions = [
-        { type: 'emoji', content: '🌸', x: 8, y: 18, size: '1.4rem' },
-        { type: 'code', content: '</>', x: 18, y: 12 },
-        { type: 'emoji', content: '✨', x: 28, y: 22, size: '1.2rem' },
-        { type: 'flower', content: 'svg5', x: 42, y: 15, size: '28px' },
-        { type: 'code', content: 'fn()', x: 85, y: 14 },
-        { type: 'emoji', content: '💮', x: 92, y: 25, size: '1.3rem' },
-        { type: 'code', content: '{ }', x: 6, y: 45 },
-        { type: 'emoji', content: '🌺', x: 14, y: 62, size: '1.35rem' },
-        { type: 'flower', content: 'svg4', x: 26, y: 78, size: '26px' },
-        { type: 'code', content: '=>', x: 38, y: 86 },
-        { type: 'emoji', content: '🌸', x: 50, y: 88, size: '1.3rem' },
-        { type: 'code', content: 'const', x: 64, y: 82 },
-        { type: 'emoji', content: '🌷', x: 88, y: 74, size: '1.35rem' },
-        { type: 'flower', content: 'svg5', x: 94, y: 55, size: '26px' },
-        { type: 'code', content: '&&', x: 82, y: 42 },
-        { type: 'emoji', content: '✿', x: 48, y: 8, size: '1.2rem' },
-        { type: 'code', content: ';', x: 74, y: 22 },
-        { type: 'emoji', content: '✨', x: 3, y: 80, size: '1.15rem' },
+        { type: 'emoji', content: '🌸', x: 7, y: 18, size: '1.4rem' },
+        { type: 'code', content: '</>', x: 17, y: 12 },
+        { type: 'emoji', content: '✨', x: 26, y: 22, size: '1.2rem' },
+        { type: 'flower', content: 'svg5', x: 38, y: 14, size: '28px' },
+        { type: 'code', content: 'fn()', x: 94, y: 8 },
+        { type: 'emoji', content: '💮', x: 96, y: 22, size: '1.3rem' },
+        { type: 'code', content: '{ }', x: 5, y: 46 },
+        { type: 'emoji', content: '🌺', x: 12, y: 64, size: '1.35rem' },
+        { type: 'flower', content: 'svg4', x: 24, y: 80, size: '26px' },
+        { type: 'code', content: '=>', x: 36, y: 88 },
+        { type: 'emoji', content: '🌸', x: 48, y: 90, size: '1.3rem' },
+        { type: 'code', content: 'const', x: 58, y: 92 },
+        { type: 'emoji', content: '🌷', x: 96, y: 82, size: '1.35rem' },
+        { type: 'flower', content: 'svg5', x: 96, y: 62, size: '26px' },
+        { type: 'code', content: '&&', x: 94, y: 44 },
+        { type: 'emoji', content: '✿', x: 48, y: 6, size: '1.2rem' },
+        { type: 'code', content: ';', x: 62, y: 10 },
+        { type: 'emoji', content: '✨', x: 3, y: 82, size: '1.15rem' },
     ];
 
     const flowerSVGs = {
@@ -145,7 +141,7 @@ if (heroSection && floatingLayer) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Create particle DOM nodes
-    particleDefinitions.forEach((def, index) => {
+    particleDefinitions.forEach((def) => {
         const el = document.createElement('div');
         el.className = `float-item float-item-${def.type}`;
         
@@ -173,11 +169,12 @@ if (heroSection && floatingLayer) {
             vx: 0,
             vy: 0,
             driftPhase: Math.random() * Math.PI * 2,
-            driftSpeed: 0.0012 + Math.random() * 0.001,
-            driftAmpX: 8 + Math.random() * 10,
-            driftAmpY: 10 + Math.random() * 12,
-            rotation: (Math.random() - 0.5) * 30,
-            baseRotation: (Math.random() - 0.5) * 30
+            // Slower, serene floating speed
+            driftSpeed: 0.0003 + Math.random() * 0.0003,
+            driftAmpX: 5 + Math.random() * 6,
+            driftAmpY: 6 + Math.random() * 7,
+            rotation: (Math.random() - 0.5) * 24,
+            baseRotation: (Math.random() - 0.5) * 24
         });
     });
 

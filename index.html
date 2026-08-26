@@ -32,6 +32,31 @@
     the finish review, the verdict, and DESIGN.md.
     -->
 
+    <!-- ===== Preloader ===== -->
+    <div id="preloader" class="preloader" aria-hidden="true">
+        <div class="preloader-content">
+            <div class="preloader-flower">
+                <svg viewBox="0 0 80 80" class="preloader-svg">
+                    <circle cx="40" cy="40" r="5.5" class="preloader-core"/>
+                    <g class="preloader-petals">
+                        <ellipse cx="40" cy="20" rx="7.5" ry="13" class="preloader-petal pl-1"/>
+                        <ellipse cx="59" cy="26" rx="7.5" ry="13" transform="rotate(72 59 26)" class="preloader-petal pl-2"/>
+                        <ellipse cx="52" cy="54" rx="7.5" ry="13" transform="rotate(144 52 54)" class="preloader-petal pl-3"/>
+                        <ellipse cx="28" cy="54" rx="7.5" ry="13" transform="rotate(216 28 54)" class="preloader-petal pl-4"/>
+                        <ellipse cx="21" cy="26" rx="7.5" ry="13" transform="rotate(288 21 26)" class="preloader-petal pl-5"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="preloader-brand">
+                <span class="preloader-title">Sneha</span>
+                <span class="preloader-sub">portfolio</span>
+            </div>
+            <div class="preloader-track">
+                <div class="preloader-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <header class="navbar">
         <div class="wrap nav-row">
             <a class="brand" href="#home" aria-label="Sharika Akter Sneha, home">
@@ -45,11 +70,51 @@
             </button>
             <nav>
                 <ul class="nav-menu" id="primary-nav">
-                    <li><a href="#about"><span>About</span></a></li>
-                    <li><a href="#skills"><span>Skills</span></a></li>
-                    <li><a href="#record"><span>Record</span></a></li>
-                    <li><a href="#hobbies"><span>Hobbies</span></a></li>
-                    <li><a href="#contact"><span>Contact</span></a></li>
+                    <li>
+                        <a href="#about" class="nav-link-interactive">
+                            <span class="nav-text">About</span>
+                            <span class="nav-bloom" aria-hidden="true">
+                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                            </span>
+                            <span class="nav-petal" aria-hidden="true">🌸</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#skills" class="nav-link-interactive">
+                            <span class="nav-text">Skills</span>
+                            <span class="nav-bloom" aria-hidden="true">
+                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>
+                            </span>
+                            <span class="nav-petal" aria-hidden="true">✨</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#record" class="nav-link-interactive">
+                            <span class="nav-text">Record</span>
+                            <span class="nav-bloom" aria-hidden="true">
+                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                            </span>
+                            <span class="nav-petal" aria-hidden="true">💮</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#hobbies" class="nav-link-interactive">
+                            <span class="nav-text">Hobbies</span>
+                            <span class="nav-bloom" aria-hidden="true">
+                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>
+                            </span>
+                            <span class="nav-petal" aria-hidden="true">🌺</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="nav-link-interactive">
+                            <span class="nav-text">Contact</span>
+                            <span class="nav-bloom" aria-hidden="true">
+                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                            </span>
+                            <span class="nav-petal" aria-hidden="true">🌸</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -107,32 +172,26 @@
                     </div>
                 </div>
                 <div class="hero-portrait" data-aos="fade-up" data-aos-delay="150">
-                    <div class="portrait-wrapper">
+                    <div class="portrait-wrapper portrait-interactive" tabindex="0" aria-label="Portrait of Sharika Akter Sneha">
                         <div class="portrait">
                             <img id="profilePhoto" src="./profile-photo.jpg" alt="Sharika Akter Sneha" width="720" height="960">
                         </div>
 
-                        <!-- Floral Shroud Overlay (Veiled on initial load, blooms & scatters on reveal) -->
-                        <div class="floral-shroud" id="floralShroud" aria-hidden="true">
-                            <div class="shroud-backdrop"></div>
-                            <div class="shroud-flower sf-center">
-                                <svg viewBox="0 0 80 80" class="shroud-svg"><g fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="40" cy="40" r="7"/><ellipse cx="40" cy="18" rx="8" ry="13"/><ellipse cx="61" cy="27" rx="8" ry="13" transform="rotate(72 61 27)"/><ellipse cx="53" cy="56" rx="8" ry="13" transform="rotate(144 53 56)"/><ellipse cx="27" cy="56" rx="8" ry="13" transform="rotate(216 27 56)"/><ellipse cx="19" cy="27" rx="8" ry="13" transform="rotate(288 19 27)"/></g></svg>
-                            </div>
-                            <div class="shroud-flower sf-top-left">
-                                <svg viewBox="0 0 50 50" class="shroud-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="25" cy="25" r="4.5"/><ellipse cx="25" cy="12" rx="4.5" ry="8"/><ellipse cx="25" cy="38" rx="4.5" ry="8"/><ellipse cx="12" cy="25" rx="8" ry="4.5"/><ellipse cx="38" cy="25" rx="8" ry="4.5"/></g></svg>
-                            </div>
-                            <div class="shroud-flower sf-top-right">
-                                <svg viewBox="0 0 60 60" class="shroud-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="30" cy="30" r="5"/><path d="M30 30 L30 10 C35 13 40 20 30 30 Z"/><path d="M30 30 L50 30 C47 35 40 40 30 30 Z"/><path d="M30 30 L30 50 C25 47 20 40 30 30 Z"/><path d="M30 30 L10 30 C13 25 20 20 30 30 Z"/></g></svg>
-                            </div>
-                            <div class="shroud-flower sf-bottom-center">
-                                <svg viewBox="0 0 50 50" class="shroud-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="25" cy="25" r="4"/><ellipse cx="25" cy="13" rx="4" ry="7"/><ellipse cx="25" cy="37" rx="4" ry="7"/><ellipse cx="13" cy="25" rx="7" ry="4"/><ellipse cx="37" cy="25" rx="7" ry="4"/></g></svg>
-                            </div>
-                            <span class="shroud-petal sp-1">🌸</span>
-                            <span class="shroud-petal sp-2">💮</span>
-                            <span class="shroud-petal sp-3">🌺</span>
-                            <span class="shroud-petal sp-4">🌸</span>
-                            <span class="shroud-petal sp-5">✨</span>
-                            <span class="shroud-petal sp-6">🌸</span>
+                        <!-- Non-overlapping blooming flowers around the portrait -->
+                        <div class="portrait-blooms" aria-hidden="true">
+                            <span class="portrait-bloom pb-top-center">
+                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                            </span>
+                            <span class="portrait-bloom pb-top-right">
+                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>
+                            </span>
+                            <span class="portrait-bloom pb-bottom-left">
+                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                            </span>
+                            <span class="portrait-petal pp-top-sparkle">✨</span>
+                            <span class="portrait-petal pp-mid-left">🌸</span>
+                            <span class="portrait-petal pp-mid-right">💮</span>
+                            <span class="portrait-petal pp-bottom-left">🌺</span>
                         </div>
                     </div>
 

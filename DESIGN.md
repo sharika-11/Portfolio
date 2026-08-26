@@ -46,14 +46,16 @@ Contrast rules: small text never uses `--pink-500` on paper (3.7:1) — labels u
 
 ## Motion & Craft Interactions
 
-- **AOS 2.3.4**: `fade-up` reveals, `once: true`, 700ms ease-out-cubic, disabled under `prefers-reduced-motion`.
+- **Theme Preloader**: Notebook-styled preloader with graph paper ground, core/petal blooming SVG animation, and ruled line progress bar before site reveal.
+- **AOS 2.3.4 & Staggered Reveal**: `fade-up` reveals, `once: true`, 700ms ease-out-cubic, disabled under `prefers-reduced-motion`. Coordinated entrance animations for navbar, hero text, and portrait once preloader dismisses.
 - **Failsafe**: if the AOS CDN fails, `data-aos` attributes are stripped so content never stays hidden.
 - **Hero Name Floral Bloom**: Hovering over "Sharika Akter Sneha" triggers a coordinated staggered cascade of hand-authored SVG flower buds, blooming petals, and sparkles.
-- **Hero Background Evasion Physics**: Floating floral marks, emojis, and mono code glyphs ambiently oscillate with harmonic sine waves; when the cursor approaches, a physics engine repels them with inverse-distance force vectors before damped spring tension smoothly returns them to their orbit.
-- **Hero Portrait Floral Shroud Reveal**: On initial page load, a dense bouquet of blooming SVG flowers and petals veils the portrait arch and dynamically blossoms and scatters outward in all directions to reveal Sharika's photo. Replayable on click/tap.
+- **Hero Portrait Floral Bloom**: Simplified, elegant floral bloom system around the portrait arch (matching the hero name mechanic) that blossoms outward on hover/focus.
+- **Header Menu Floral Bloom**: Nav menu items reveal larger blooming flower SVGs and petals on hover with smooth cubic-bezier spring elevation.
+- **Hero Background Evasion Physics**: Floating floral marks, emojis, and mono code glyphs ambiently float with serene, slowed harmonic drift; when the cursor approaches, a physics engine repels them with inverse-distance force vectors before damped spring tension smoothly returns them to their orbit.
 - **Interactive Kinetic Description**: Key terms (*algorithms*, *design*, *ICPC*, *Dhaka*) feature ink-wash highlights with smooth hover expansion.
 - **Super Animated Buttons**: Solid CTA features an angled light shimmer sheen on hover and spinning blossom; Ghost CTA features "See my resume" with fill sweep and arrow glide; click ripple burst on all buttons.
-- **Header Menu**: Floating pill backdrop with spring indicator blossom and `Sneha` brand flower 180° spin.
+- **Brand Flower**: Enlarged 28px brand flower with 180° spin on hover.
 
 ## Responsive
 
