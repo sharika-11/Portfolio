@@ -1,3 +1,33 @@
+// ===== Lenis Smooth Scrolling Engine =====
+let lenis = null;
+
+if (typeof Lenis !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.5,
+        infinite: false,
+    });
+
+    // Synchronize Lenis scroll updates with active navbar & AOS
+    lenis.on('scroll', () => {
+        updateActiveNav();
+        if (window.AOS) {
+            AOS.refresh();
+        }
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+}
+
 // ===== AOS scroll animations =====
 if (window.AOS) {
     AOS.init({
@@ -11,6 +41,26 @@ if (window.AOS) {
     // Failsafe: never leave content hidden if the AOS CDN fails
     document.querySelectorAll('[data-aos]').forEach((el) => el.removeAttribute('data-aos'));
 }
+
+// ===== Smooth Anchor Navigation with Lenis =====
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+            e.preventDefault();
+            if (lenis) {
+                lenis.scrollTo(targetEl, {
+                    offset: targetId === '#home' ? 0 : -20,
+                    duration: 1.2,
+                });
+            } else {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+});
 
 // ===== Mobile menu =====
 const navToggle = document.getElementById('navToggle');
@@ -357,6 +407,7 @@ function openArtworkModal(src, title, tag) {
     artworkModal.classList.add('open');
     artworkModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
 
     if (artworkModalClose) artworkModalClose.focus();
 }
@@ -366,6 +417,7 @@ function closeArtworkModal() {
     artworkModal.classList.remove('open');
     artworkModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (lenis) lenis.start();
 
     if (lastFocusedBento) {
         lastFocusedBento.focus();

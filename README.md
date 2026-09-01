@@ -25,6 +25,7 @@ The website is styled as a student developer's personal notebook on pink graph p
 - **📐 Flower-Themed Section Dividers**: Frosted botanical medallions with dual hairline gradient rules and subtle ("shuttle") section background palette transitions.
 - **🍃 Ambient Particle Evasion Physics**: Floating floral marks and code glyphs drift harmoniously and scurry away upon cursor proximity with physics spring tension.
 - **📱 Responsive Mobile Hero**: Adaptive CSS Grid positioning the portrait photograph directly beside the hero name on mobile devices.
+- **✨ Lenis Smooth Scrolling**: Powered by [Lenis](https://github.com/darkroomengineering/lenis) for smooth scrolling animations, anchor navigation interpolation, and modal scroll lock management.
 - **⚡ Phosphor Icons**: Integrated crisp vector iconography from [Phosphor Icons](https://phosphoricons.com/) styled to harmonize with the soft pink notebook aesthetic.
 
 ---
