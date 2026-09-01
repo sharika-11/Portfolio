@@ -80,6 +80,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#artworks" class="nav-link-interactive">
+                            <span class="nav-text">Artworks</span>
+                            <span class="nav-petal" aria-hidden="true">🎨</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#hobbies" class="nav-link-interactive">
                             <span class="nav-text">Hobbies</span>
                             <span class="nav-petal" aria-hidden="true">🌺</span>
@@ -98,9 +104,9 @@
 
     <main>
         <!-- ===== Hero ===== -->
-        <section id="home" class="hero">
+        <section id="home" class="hero section-hero">
             <span class="code-glyph glyph-hero" aria-hidden="true">&lt;/&gt;</span>
-
+            
             <!-- Interactive Floating Canvas & Particle Evasion Layer -->
             <div class="hero-floating-elements" id="heroFloatingLayer" aria-hidden="true"></div>
 
@@ -169,8 +175,19 @@
             </a>
         </section>
 
+        <!-- Divider 1: Hero -> About -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-badge">
+                <span class="divider-sparkle">✦</span>
+                <span class="divider-flower">🌸</span>
+                <span class="divider-sparkle">✧</span>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
         <!-- ===== About ===== -->
-        <section id="about" class="section">
+        <section id="about" class="section section-about">
             <span class="code-glyph glyph-about" aria-hidden="true">;</span>
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
@@ -203,8 +220,19 @@
             </div>
         </section>
 
+        <!-- Divider 2: About -> Skills -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-badge">
+                <span class="divider-sparkle">✧</span>
+                <span class="divider-flower">✨</span>
+                <span class="divider-sparkle">✦</span>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
         <!-- ===== Skills ===== -->
-        <section id="skills" class="section section-tint">
+        <section id="skills" class="section section-skills">
             <span class="code-glyph glyph-skills" aria-hidden="true">#</span>
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
@@ -266,8 +294,19 @@
             </div>
         </section>
 
+        <!-- Divider 3: Skills -> Record -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-badge">
+                <span class="divider-sparkle">✦</span>
+                <span class="divider-flower">💮</span>
+                <span class="divider-sparkle">✧</span>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
         <!-- ===== Record ===== -->
-        <section id="record" class="section">
+        <section id="record" class="section section-record">
             <span class="code-glyph glyph-record" aria-hidden="true">=&gt;</span>
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
@@ -315,8 +354,193 @@
             </div>
         </section>
 
+        <!-- Divider 4: Record -> Artworks -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-badge">
+                <span class="divider-sparkle">✦</span>
+                <span class="divider-flower">🎨</span>
+                <span class="divider-sparkle">🌸</span>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- ===== Artworks ===== -->
+        <section id="artworks" class="section section-artworks">
+            <span class="code-glyph glyph-artworks" aria-hidden="true">&lt;art&gt;</span>
+            <div class="wrap">
+                <header class="section-head" data-aos="fade-up">
+                    <h2>Artworks</h2>
+                    <span class="section-flower" aria-hidden="true">🎨</span>
+                </header>
+                <p class="section-intro" data-aos="fade-up">
+                    Visual creations, landscape studies, and botanical scenes painted and captured between algorithms. Hover each piece to reveal blooming details.
+                </p>
+
+                <!-- Bento Box Grid of Artworks -->
+                <div class="bento-grid">
+                    <!-- Bento Item 1: Featured Large (Petal Storm) -->
+                    <div class="bento-item bento-featured" data-aos="fade-up" tabindex="0" role="button" aria-label="View artwork: A Moment in the Petal Storm" data-artwork-src="./public/A Moment in the Petal Storm.jpg" data-artwork-title="A Moment in the Petal Storm" data-artwork-tag="Featured Piece · Atmospheric Painting">
+                        <div class="bento-img-wrap">
+                            <img src="./public/A Moment in the Petal Storm.jpg" alt="A Moment in the Petal Storm" class="bento-img" loading="lazy">
+                        </div>
+                        <div class="bento-blooms" aria-hidden="true">
+                            <span class="bento-petal bp-top-left">🌸</span>
+                            <span class="bento-petal bp-top-right">✨</span>
+                            <span class="bento-petal bp-mid-left">🌷</span>
+                            <span class="bento-petal bp-mid-right">💮</span>
+                            <span class="bento-petal bp-bottom-left">🌺</span>
+                            <span class="bento-petal bp-bottom-right">🌼</span>
+                        </div>
+                        <div class="bento-overlay">
+                            <div class="bento-info">
+                                <span class="bento-tag">Featured Work</span>
+                                <h3 class="bento-title">A Moment in the Petal Storm</h3>
+                                <p class="bento-sub">Atmospheric composition &amp; floral flurry</p>
+                            </div>
+                            <span class="bento-action" aria-hidden="true">✿</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Item 2: Tall Portrait (Whispers of the Cold Breeze) -->
+                    <div class="bento-item bento-tall" data-aos="fade-up" data-aos-delay="80" tabindex="0" role="button" aria-label="View artwork: Whispers of the Cold Breeze" data-artwork-src="./public/Whispers of the Cold Breeze.jpg" data-artwork-title="Whispers of the Cold Breeze" data-artwork-tag="Landscape Study · Atmospheric Tone">
+                        <div class="bento-img-wrap">
+                            <img src="./public/Whispers of the Cold Breeze.jpg" alt="Whispers of the Cold Breeze" class="bento-img" loading="lazy">
+                        </div>
+                        <div class="bento-blooms" aria-hidden="true">
+                            <span class="bento-petal bp-top-left">❄️</span>
+                            <span class="bento-petal bp-top-right">✨</span>
+                            <span class="bento-petal bp-bottom-left">🌸</span>
+                            <span class="bento-petal bp-bottom-right">💮</span>
+                        </div>
+                        <div class="bento-overlay">
+                            <div class="bento-info">
+                                <span class="bento-tag">Atmosphere</span>
+                                <h3 class="bento-title">Whispers of the Cold Breeze</h3>
+                                <p class="bento-sub">Subtle winter tones &amp; mist</p>
+                            </div>
+                            <span class="bento-action" aria-hidden="true">✿</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Item 3: Warm Landscape (Autumn Trees) -->
+                    <div class="bento-item bento-medium" data-aos="fade-up" data-aos-delay="120" tabindex="0" role="button" aria-label="View artwork: Autumn Trees" data-artwork-src="./public/Autumn Trees.jpg" data-artwork-title="Autumn Trees" data-artwork-tag="Color Study · Golden Foliage">
+                        <div class="bento-img-wrap">
+                            <img src="./public/Autumn Trees.jpg" alt="Autumn Trees" class="bento-img" loading="lazy">
+                        </div>
+                        <div class="bento-blooms" aria-hidden="true">
+                            <span class="bento-petal bp-top-center">🍁</span>
+                            <span class="bento-petal bp-bottom-left">🌼</span>
+                            <span class="bento-petal bp-bottom-right">✨</span>
+                        </div>
+                        <div class="bento-overlay">
+                            <div class="bento-info">
+                                <span class="bento-tag">Seasonal</span>
+                                <h3 class="bento-title">Autumn Trees</h3>
+                                <p class="bento-sub">Warm golden hues &amp; foliage</p>
+                            </div>
+                            <span class="bento-action" aria-hidden="true">✿</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Item 4: Nature Cascade (Waterfall & Trees) -->
+                    <div class="bento-item bento-medium" data-aos="fade-up" data-aos-delay="160" tabindex="0" role="button" aria-label="View artwork: Waterfall & Trees" data-artwork-src="./public/Waterfall & Trees.jpg" data-artwork-title="Waterfall &amp; Trees" data-artwork-tag="Nature Study · Flowing Water">
+                        <div class="bento-img-wrap">
+                            <img src="./public/Waterfall & Trees.jpg" alt="Waterfall & Trees" class="bento-img" loading="lazy">
+                        </div>
+                        <div class="bento-blooms" aria-hidden="true">
+                            <span class="bento-petal bp-top-right">💧</span>
+                            <span class="bento-petal bp-bottom-left">🌷</span>
+                            <span class="bento-petal bp-bottom-right">✨</span>
+                        </div>
+                        <div class="bento-overlay">
+                            <div class="bento-info">
+                                <span class="bento-tag">Serenity</span>
+                                <h3 class="bento-title">Waterfall &amp; Trees</h3>
+                                <p class="bento-sub">Flowing cascade &amp; verdant forest</p>
+                            </div>
+                            <span class="bento-action" aria-hidden="true">✿</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Item 5: Countryside (Harvest Scenery) -->
+                    <div class="bento-item bento-medium" data-aos="fade-up" data-aos-delay="200" tabindex="0" role="button" aria-label="View artwork: Harvest Scenery" data-artwork-src="./public/Harvest Scenery.jpg" data-artwork-title="Harvest Scenery" data-artwork-tag="Rural Life · Golden Hour">
+                        <div class="bento-img-wrap">
+                            <img src="./public/Harvest Scenery.jpg" alt="Harvest Scenery" class="bento-img" loading="lazy">
+                        </div>
+                        <div class="bento-blooms" aria-hidden="true">
+                            <span class="bento-petal bp-top-left">🌾</span>
+                            <span class="bento-petal bp-top-right">🌻</span>
+                            <span class="bento-petal bp-bottom-right">✨</span>
+                        </div>
+                        <div class="bento-overlay">
+                            <div class="bento-info">
+                                <span class="bento-tag">Countryside</span>
+                                <h3 class="bento-title">Harvest Scenery</h3>
+                                <p class="bento-sub">Golden fields &amp; pastoral life</p>
+                            </div>
+                            <span class="bento-action" aria-hidden="true">✿</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Item 6: Wide Riverscape (Boat at Sunset) -->
+                    <div class="bento-item bento-wide" data-aos="fade-up" data-aos-delay="240" tabindex="0" role="button" aria-label="View artwork: Boat at Sunset - Landscape View" data-artwork-src="./public/Boat at Sunset - Landscape View.jpg" data-artwork-title="Boat at Sunset" data-artwork-tag="Sunset Study · Water Reflection">
+                        <div class="bento-img-wrap">
+                            <img src="./public/Boat at Sunset - Landscape View.jpg" alt="Boat at Sunset - Landscape View" class="bento-img" loading="lazy">
+                        </div>
+                        <div class="bento-blooms" aria-hidden="true">
+                            <span class="bento-petal bp-top-left">🌅</span>
+                            <span class="bento-petal bp-top-right">✨</span>
+                            <span class="bento-petal bp-bottom-left">🌺</span>
+                            <span class="bento-petal bp-bottom-right">🌸</span>
+                        </div>
+                        <div class="bento-overlay">
+                            <div class="bento-info">
+                                <span class="bento-tag">Twilight</span>
+                                <h3 class="bento-title">Boat at Sunset</h3>
+                                <p class="bento-sub">River reflections &amp; dusk horizon</p>
+                            </div>
+                            <span class="bento-action" aria-hidden="true">✿</span>
+                        </div>
+                    </div>
+
+                    <!-- Bento Item 7: Wide Landscape (Village Landscape) -->
+                    <div class="bento-item bento-wide" data-aos="fade-up" data-aos-delay="280" tabindex="0" role="button" aria-label="View artwork: Village Landscape" data-artwork-src="./public/Village Landscape .jpg" data-artwork-title="Village Landscape" data-artwork-tag="Traditional Bengali Village">
+                        <div class="bento-img-wrap">
+                            <img src="./public/Village Landscape .jpg" alt="Village Landscape" class="bento-img" loading="lazy">
+                        </div>
+                        <div class="bento-blooms" aria-hidden="true">
+                            <span class="bento-petal bp-top-left">🏡</span>
+                            <span class="bento-petal bp-top-right">🌸</span>
+                            <span class="bento-petal bp-bottom-left">🌷</span>
+                            <span class="bento-petal bp-bottom-right">✨</span>
+                        </div>
+                        <div class="bento-overlay">
+                            <div class="bento-info">
+                                <span class="bento-tag">Heritage</span>
+                                <h3 class="bento-title">Village Landscape</h3>
+                                <p class="bento-sub">Rural Bengali charm &amp; riverside trees</p>
+                            </div>
+                            <span class="bento-action" aria-hidden="true">✿</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider 5: Artworks -> Hobbies -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-badge">
+                <span class="divider-sparkle">✧</span>
+                <span class="divider-flower">🌺</span>
+                <span class="divider-sparkle">✦</span>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
         <!-- ===== Hobbies ===== -->
-        <section id="hobbies" class="section section-tint">
+        <section id="hobbies" class="section section-hobbies">
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
                     <h2>Off screen</h2>
@@ -342,8 +566,19 @@
             </div>
         </section>
 
+        <!-- Divider 6: Hobbies -> Contact -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-badge">
+                <span class="divider-sparkle">✦</span>
+                <span class="divider-flower">🌷</span>
+                <span class="divider-sparkle">✧</span>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
         <!-- ===== Contact ===== -->
-        <section id="contact" class="section">
+        <section id="contact" class="section section-contact">
             <span class="code-glyph glyph-contact" aria-hidden="true">{ }</span>
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
@@ -396,6 +631,21 @@
             </p>
         </div>
     </footer>
+
+    <!-- ===== Artwork Lightbox Modal ===== -->
+    <div id="artworkModal" class="artwork-modal" aria-hidden="true" role="dialog" aria-label="Artwork enlarged preview">
+        <div class="artwork-modal-backdrop" id="artworkModalBackdrop"></div>
+        <div class="artwork-modal-dialog">
+            <button class="artwork-modal-close" id="artworkModalClose" aria-label="Close artwork preview">&times;</button>
+            <div class="artwork-modal-body">
+                <img id="artworkModalImg" src="" alt="Artwork enlarged view" class="artwork-modal-img">
+                <div class="artwork-modal-caption">
+                    <span id="artworkModalTag" class="artwork-modal-tag"></span>
+                    <h3 id="artworkModalTitle" class="artwork-modal-title"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>

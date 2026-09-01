@@ -338,3 +338,72 @@ if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
 }
 
+// ===== Artwork Lightbox Modal Controller =====
+const artworkModal = document.getElementById('artworkModal');
+const artworkModalImg = document.getElementById('artworkModalImg');
+const artworkModalTitle = document.getElementById('artworkModalTitle');
+const artworkModalTag = document.getElementById('artworkModalTag');
+const artworkModalClose = document.getElementById('artworkModalClose');
+const artworkModalBackdrop = document.getElementById('artworkModalBackdrop');
+let lastFocusedBento = null;
+
+function openArtworkModal(src, title, tag) {
+    if (!artworkModal || !artworkModalImg) return;
+    artworkModalImg.src = src;
+    artworkModalImg.alt = title;
+    if (artworkModalTitle) artworkModalTitle.textContent = title;
+    if (artworkModalTag) artworkModalTag.textContent = tag || 'Artwork';
+
+    artworkModal.classList.add('open');
+    artworkModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (artworkModalClose) artworkModalClose.focus();
+}
+
+function closeArtworkModal() {
+    if (!artworkModal) return;
+    artworkModal.classList.remove('open');
+    artworkModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    if (lastFocusedBento) {
+        lastFocusedBento.focus();
+    }
+}
+
+document.querySelectorAll('.bento-item').forEach((item) => {
+    const triggerModal = () => {
+        const src = item.getAttribute('data-artwork-src');
+        const title = item.getAttribute('data-artwork-title');
+        const tag = item.getAttribute('data-artwork-tag');
+        if (src) {
+            lastFocusedBento = item;
+            openArtworkModal(src, title, tag);
+        }
+    };
+
+    item.addEventListener('click', triggerModal);
+    item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            triggerModal();
+        }
+    });
+});
+
+if (artworkModalClose) {
+    artworkModalClose.addEventListener('click', closeArtworkModal);
+}
+
+if (artworkModalBackdrop) {
+    artworkModalBackdrop.addEventListener('click', closeArtworkModal);
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && artworkModal && artworkModal.classList.contains('open')) {
+        closeArtworkModal();
+    }
+});
+
+

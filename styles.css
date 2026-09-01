@@ -765,21 +765,109 @@ body.site-ready .hero-portrait {
 .glyph-about { font-size: clamp(7rem, 16vw, 13rem); top: 4%; right: 6%; }
 .glyph-skills { font-size: clamp(7rem, 16vw, 13rem); bottom: 2%; left: 2%; }
 .glyph-record { font-size: clamp(7rem, 15vw, 12rem); top: 6%; right: 4%; }
+.glyph-artworks { font-size: clamp(7rem, 16vw, 13rem); top: 4%; right: 3%; }
 .glyph-contact { font-size: clamp(8rem, 18vw, 15rem); bottom: 4%; right: 2%; }
 
-.glyph-skills { font-size: clamp(7rem, 16vw, 13rem); bottom: 2%; left: 2%; }
-.glyph-record { font-size: clamp(7rem, 15vw, 12rem); top: 6%; right: 4%; }
-.glyph-contact { font-size: clamp(8rem, 18vw, 15rem); bottom: 4%; right: 2%; }
-
-/* ===== Sections ===== */
-.section {
+/* ===== Section Dividers ===== */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+    padding-block: 0.8rem;
     position: relative;
-    padding-block: clamp(4rem, 8vw, 6.5rem);
-    scroll-margin-top: var(--nav-h);
+    z-index: 3;
+    user-select: none;
 }
 
-.section-tint {
-    background: linear-gradient(180deg, rgba(231, 168, 192, 0.13), rgba(231, 168, 192, 0.04));
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--pink-300), transparent);
+    opacity: 0.75;
+}
+
+.divider-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1.05rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(161, 58, 99, 0.05);
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease, border-color 200ms ease;
+}
+
+.divider-badge:hover {
+    transform: scale(1.08) translateY(-1px);
+    border-color: var(--pink-400);
+    box-shadow: 0 4px 16px rgba(161, 58, 99, 0.12);
+}
+
+.divider-flower {
+    font-size: 1.35rem;
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 2px 4px rgba(161, 58, 99, 0.2));
+}
+
+.divider-badge:hover .divider-flower {
+    transform: scale(1.3) rotate(25deg);
+}
+
+.divider-sparkle {
+    font-size: 0.85rem;
+    color: var(--pink-400);
+    opacity: 0.7;
+    transition: transform 350ms ease, opacity 200ms ease;
+}
+
+.divider-badge:hover .divider-sparkle {
+    opacity: 1;
+    transform: rotate(180deg);
+}
+
+/* ===== Sections & Shuttle Color Shifts ===== */
+.section {
+    position: relative;
+    padding-block: clamp(4.2rem, 8.5vw, 6.8rem);
+    scroll-margin-top: var(--nav-h);
+    transition: background-color 300ms ease;
+}
+
+.section-hero {
+    background-color: transparent;
+}
+
+.section-about {
+    background: linear-gradient(180deg, rgba(253, 246, 249, 0.4), rgba(251, 233, 240, 0.25), rgba(253, 246, 249, 0.4));
+}
+
+.section-skills {
+    background: linear-gradient(180deg, rgba(231, 168, 192, 0.14), rgba(243, 207, 221, 0.08));
+}
+
+.section-record {
+    background: linear-gradient(180deg, rgba(251, 233, 240, 0.35), rgba(253, 246, 249, 0.5));
+}
+
+.section-artworks {
+    background: linear-gradient(180deg, rgba(243, 207, 221, 0.26), rgba(251, 233, 240, 0.52), rgba(253, 246, 249, 0.75));
+    position: relative;
+}
+
+.section-hobbies {
+    background: linear-gradient(180deg, rgba(231, 168, 192, 0.13), rgba(231, 168, 192, 0.05));
+}
+
+.section-contact {
+    background: linear-gradient(180deg, rgba(253, 246, 249, 0.5), rgba(251, 233, 240, 0.3));
 }
 
 .section-head {
@@ -1002,6 +1090,301 @@ body.site-ready .hero-portrait {
 
 .timeline li:hover h3 {
     color: var(--pink-700);
+}
+
+/* ===== Artworks Bento Grid ===== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.1rem, 2.4vw, 1.75rem);
+}
+
+.bento-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--rule);
+    box-shadow: 0 4px 18px rgba(161, 58, 99, 0.07);
+    cursor: pointer;
+    transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 320ms ease, border-color 260ms ease;
+    isolation: isolate;
+    user-select: none;
+}
+
+/* Bento item desktop spans */
+.bento-featured {
+    grid-column: span 7;
+    min-height: 420px;
+}
+
+.bento-tall {
+    grid-column: span 5;
+    min-height: 420px;
+}
+
+.bento-medium {
+    grid-column: span 4;
+    min-height: 320px;
+}
+
+.bento-wide {
+    grid-column: span 6;
+    min-height: 340px;
+}
+
+.bento-img-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: var(--pink-100);
+}
+
+.bento-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+}
+
+.bento-item:hover {
+    transform: translateY(-6px) scale(1.015);
+    border-color: var(--pink-400);
+    box-shadow: 0 16px 36px rgba(161, 58, 99, 0.18);
+    z-index: 10;
+}
+
+.bento-item:hover .bento-img {
+    transform: scale(1.06);
+    filter: brightness(1.02);
+}
+
+/* Flower Revealing Bloom Emojis on Bento Hover */
+.bento-blooms {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.bento-blooms .bento-petal {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: transform 460ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease;
+    transform-origin: center;
+    filter: drop-shadow(0 3px 8px rgba(161, 58, 99, 0.35));
+    font-size: 1.45rem;
+}
+
+/* Positioning of flower petals around the bento tiles */
+.bp-top-left { top: -14px; left: -12px; }
+.bp-top-right { top: -14px; right: -12px; }
+.bp-top-center { top: -16px; left: 50%; margin-left: -12px; }
+.bp-mid-left { top: 48%; left: -16px; }
+.bp-mid-right { top: 45%; right: -16px; }
+.bp-bottom-left { bottom: -12px; left: -12px; }
+.bp-bottom-right { bottom: -12px; right: -12px; }
+
+.bento-item:hover .bento-petal,
+.bento-item:focus-visible .bento-petal {
+    opacity: 1;
+}
+
+.bento-item:hover .bp-top-left { transform: scale(1) rotate(-22deg) translate(2px, 2px); transition-delay: 20ms; }
+.bento-item:hover .bp-top-right { transform: scale(1) rotate(26deg) translate(-2px, 2px); transition-delay: 60ms; }
+.bento-item:hover .bp-top-center { transform: scale(1) rotate(15deg) translateY(-4px); transition-delay: 40ms; }
+.bento-item:hover .bp-mid-left { transform: scale(1) rotate(-18deg) translateX(-4px); transition-delay: 80ms; }
+.bento-item:hover .bp-mid-right { transform: scale(1) rotate(22deg) translateX(4px); transition-delay: 100ms; }
+.bento-item:hover .bp-bottom-left { transform: scale(1) rotate(-32deg) translate(2px, -2px); transition-delay: 120ms; }
+.bento-item:hover .bp-bottom-right { transform: scale(1) rotate(28deg) translate(-2px, -2px); transition-delay: 140ms; }
+
+/* Bento Caption Overlay */
+.bento-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 1.5rem 1.4rem 1.2rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(67, 36, 47, 0.4) 30%, rgba(67, 36, 47, 0.88) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    z-index: 2;
+    transition: background 300ms ease;
+}
+
+.bento-item:hover .bento-overlay {
+    background: linear-gradient(180deg, transparent 0%, rgba(161, 58, 99, 0.45) 30%, rgba(67, 36, 47, 0.92) 100%);
+}
+
+.bento-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bento-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fbe9f0;
+    background: rgba(161, 58, 99, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 6px;
+    align-self: flex-start;
+    backdrop-filter: blur(4px);
+}
+
+.bento-title {
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.bento-sub {
+    font-size: 0.86rem;
+    color: #f3cfdd;
+    line-height: 1.4;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bento-action {
+    font-size: 1.25rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    backdrop-filter: blur(6px);
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), background 240ms ease;
+}
+
+.bento-item:hover .bento-action {
+    transform: rotate(180deg) scale(1.15);
+    background: var(--pink-700);
+}
+
+/* ===== Artwork Lightbox Modal ===== */
+.artwork-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.artwork-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.artwork-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(67, 36, 47, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.artwork-modal-dialog {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--pink-300);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(67, 36, 47, 0.45);
+    overflow: hidden;
+    transform: scale(0.92);
+    transition: transform 340ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.artwork-modal.open .artwork-modal-dialog {
+    transform: scale(1);
+}
+
+.artwork-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--pink-300);
+    color: var(--pink-700);
+    font-size: 1.6rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 240ms ease, background 200ms ease, color 200ms ease;
+}
+
+.artwork-modal-close:hover {
+    transform: scale(1.1) rotate(90deg);
+    background: var(--pink-700);
+    color: #fff;
+}
+
+.artwork-modal-body {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.artwork-modal-img {
+    width: 100%;
+    max-height: 68vh;
+    object-fit: contain;
+    background: #1a0f14;
+}
+
+.artwork-modal-caption {
+    padding: 1.1rem 1.5rem;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.artwork-modal-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pink-700);
+    font-weight: 600;
+}
+
+.artwork-modal-title {
+    font-size: 1.35rem;
+    font-weight: 750;
+    color: var(--pink-ink);
 }
 
 /* ===== Hobbies ===== */
@@ -1416,6 +1799,12 @@ body.site-ready .hero-portrait {
     .nav-menu a.active {
         border-bottom-color: transparent;
     }
+
+    /* Bento Grid Tablet Layout */
+    .bento-featured { grid-column: span 12; min-height: 380px; }
+    .bento-tall { grid-column: span 6; min-height: 340px; }
+    .bento-medium { grid-column: span 6; min-height: 290px; }
+    .bento-wide { grid-column: span 6; min-height: 300px; }
 }
 
 /* Tablet Portrait & Mobile Stacked View: Hero Image next to Hero Name */
@@ -1502,6 +1891,10 @@ body.site-ready .hero-portrait {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
+
+    .bento-tall { grid-column: span 12; min-height: 320px; }
+    .bento-medium { grid-column: span 6; min-height: 270px; }
+    .bento-wide { grid-column: span 12; min-height: 290px; }
 }
 
 /* Mobile Small (560px & below) */
@@ -1556,6 +1949,28 @@ body.site-ready .hero-portrait {
         padding: 1.15rem;
     }
 
+    /* Bento Grid Mobile 1-column layout */
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+    }
+
+    .bento-featured,
+    .bento-tall,
+    .bento-medium,
+    .bento-wide {
+        grid-column: span 1;
+        min-height: 250px;
+    }
+
+    .bento-overlay {
+        padding: 1.1rem 1rem 0.9rem;
+    }
+
+    .bento-title {
+        font-size: 1.12rem;
+    }
+
     .hobby-cols {
         grid-template-columns: 1fr;
         gap: 1.1rem;
@@ -1567,7 +1982,7 @@ body.site-ready .hero-portrait {
     }
 
     .glyph-hero { font-size: 6.5rem; top: 4%; }
-    .glyph-about, .glyph-skills, .glyph-record, .glyph-contact { font-size: 5rem; }
+    .glyph-about, .glyph-skills, .glyph-record, .glyph-artworks, .glyph-contact { font-size: 5rem; }
 }
 
 @media (max-height: 640px) {

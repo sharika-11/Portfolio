@@ -1,178 +1,124 @@
-# 🌸 Sharika's Elegant Portfolio
+# 🌸 Sharika Akter Sneha — Developer & Creative Portfolio
 
-A sophisticated, single-page portfolio website for Sharika Akter Sneha—showcasing a programming career, academic achievements, and creative pursuits with an elegant pinkish sparkle theme.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-sneha423--portfolio.vercel.app-pink?style=for-the-badge&logo=vercel&logoColor=white)](https://sneha423-portfolio.vercel.app/)
+[![Theme](https://img.shields.io/badge/Theme-Pink_Ruled_Notebook-a13a63?style=for-the-badge)](https://sneha423-portfolio.vercel.app/)
+[![Design](https://img.shields.io/badge/Design-Bento_Gallery_%26_Botanical_Blooms-c95c86?style=for-the-badge)](https://sneha423-portfolio.vercel.app/)
 
-## ✨ Features
+> 🌸 **Live Portfolio:** [https://sneha423-portfolio.vercel.app/](https://sneha423-portfolio.vercel.app/)
 
-- **Smooth Scrolling**: Lenis-powered smooth scroll experience for fluid navigation
-- **Elegant Design**: Pink floral sparkle theme with sophisticated animations
-- **Responsive Layout**: Mobile-first design that works beautifully on all screen sizes
-- **Semantic Structure**: Proper HTML semantics and WCAG accessibility standards
-- **Fluid Animations**: Purposeful, non-distracting motion design with staggered reveals
-- **Icon System**: Font Awesome icons for consistent, professional visual language
-- **Performance**: Clean, optimized CSS and JavaScript with no unnecessary dependencies
+A personal developer portfolio and creative showcase for **Sharika Akter Sneha** — 3rd-year CSE student at the *University of Asia Pacific*, Dhaka, competitive programmer, and visual artist.
+
+---
+
+## 🌺 Overview & Concept: "Pink Ruled"
+
+The website is styled as a student developer's personal notebook on pink graph paper. Ruled horizontal and vertical grid lines, delicate botanical emojis, and oversized code punctuation share a single aesthetic sheet, deliberately refusing generic cookie-cutter templates.
+
+### ✨ Key Highlights
+
+- **🌸 Botanical Bloom Micro-Interactions**: Interactive floral emojis (`🌸`, `🌺`, `🌼`, `💮`, `🌷`, `✨`) that blossom dynamically on hover across the hero name, arch portrait, navigation links, and bento artwork cards.
+- **🎨 Bento Box Artworks Showcase**: An asymmetric Bento Grid featuring fine artworks, watercolors, and digital paintings with flower-revealing hover effects and a high-resolution Lightbox viewer.
+- **📐 Flower-Themed Section Dividers**: Frosted botanical medallions with dual hairline gradient rules and subtle ("shuttle") section background palette transitions.
+- **🍃 Ambient Particle Evasion Physics**: Floating floral marks and code glyphs drift harmoniously and scurry away upon cursor proximity with physics spring tension.
+- **📱 Responsive Mobile Hero**: Adaptive CSS Grid (`display: contents`) positioning the portrait photograph directly beside the hero name on mobile devices.
+- **⚡ 2.0s Themed Preloader**: Elegant graph-paper preloader with blooming flower animation and progress tracking.
+
+---
+
+## 🎨 Artworks Gallery (Bento Box)
+
+The newly created **Artworks** section organizes visual pieces in a modern Bento layout:
+
+| Artwork Piece | Type / Theme | Bento Grid Role |
+|---|---|---|
+| **A Moment in the Petal Storm** | Digital Painting · Atmospheric Study | *Featured Dominant Showcase* |
+| **Whispers of the Cold Breeze** | Landscape · Winter Mist & Frost | *Tall Atmosphere Card* |
+| **Autumn Trees** | Color Study · Golden Foliage | *Warm Palette Tile* |
+| **Waterfall & Trees** | Nature Study · Cascading Water | *Verdant Cascade Tile* |
+| **Harvest Scenery** | Rural Countryside · Golden Hour | *Pastoral Life Tile* |
+| **Boat at Sunset** | Riverscape · Twilight Horizon | *Wide Sunset Panorama* |
+| **Village Landscape** | Traditional Bengali Village Life | *Wide Heritage Tile* |
+
+---
 
 ## 🗂️ Project Structure
 
 ```
 portfolio/
-├── index.html          # Main portfolio page
-├── styles.css          # Complete design system and styling
-├── script.js           # Lenis smooth scrolling and interactions
-├── PRODUCT.md          # Project context and direction
-├── DESIGN.md           # Design system documentation
-└── README.md           # This file
+├── index.html                           # Main single-page application structure
+├── styles.css                           # "Pink Ruled" design system, bento grid & animations
+├── script.js                            # Particle evasion engine, lightbox & scrollspy
+├── DESIGN.md                            # Complete design system & token documentation
+├── PRODUCT.md                           # Product context, goals & key audience
+├── README.md                            # Project documentation & live links
+└── public/                              # Image assets & artwork gallery
+    ├── A Moment in the Petal Storm.jpg
+    ├── Autumn Trees.jpg
+    ├── Boat at Sunset - Landscape View.jpg
+    ├── Harvest Scenery.jpg
+    ├── Village Landscape .jpg
+    ├── Waterfall & Trees.jpg
+    ├── Whispers of the Cold Breeze.jpg
+    └── profile-photo.jpg
 ```
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary Pink**: `#d4698f` - Main brand color
-- **Rose**: `#c85a7a` - Darker pink accent
-- **Orchid/Lavender**: Soft purple accents
-- **Gold Sparkle**: `#f4d03f` - Highlight accent
-- **Neutral**: Soft pastels and whites for surfaces
-
-### Typography
-- **Headers**: Cormorant Garamond (serif) — elegant and distinctive
-- **Body**: Inter (sans-serif) — clean and readable
-- **Scale**: Responsive typography using CSS `clamp()` for fluid sizing
-
-### Motion
-- **Scroll**: Lenis smooth scrolling with exponential easing
-- **Animations**:
-  - Float animations on accents
-  - Fade-in/scale reveals on sections
-  - Parallax hero image
-  - Hover states with subtle lift
-
-## 🚀 Getting Started
-
-### Option 1: Local Python Server (Recommended)
-```bash
-cd portfolio
-python -m http.server 8000
-```
-Then open: `http://localhost:8000`
-
-### Option 2: Any HTTP Server
-```bash
-# Using Node.js http-server
-npx http-server
-
-# Using PHP
-php -S localhost:8000
-
-# Using Ruby
-ruby -run -ehttpd . -p8000
-```
-
-### Option 3: Direct from Browser
-Simply open `index.html` directly in your browser (though some features may be limited).
-
-## 📋 Sections Included
-
-1. **Hero** - Bold introduction with gradient text and floating accents
-2. **About** - Quick overview of academic passion, problem-solving, creativity, and location
-3. **Education** - University details and academic background
-4. **Achievements** - ICPC participation, math olympiad, programming training, volunteering
-5. **Programming Journey** - Codeforces experience and continuous learning
-6. **Activities & Community** - Programming club membership and volunteering
-7. **Hobbies & Interests** - Photography, singing, and Canva design
-8. **Contact** - Contact information, social links, and contact form
-
-## 🔧 Customization
-
-### Adding Your Profile Photo
-Replace the `profile-photo.jpg` path in the HTML or place your image in the portfolio folder:
-```html
-<img id="profilePhoto" src="./your-photo.jpg" alt="Your Name">
-```
-
-### Updating Contact Information
-Edit the email and social links in the contact section:
-```html
-<a href="mailto:your.email@example.com">your.email@example.com</a>
-<a href="https://github.com/your-username" class="social-btn">...</a>
-```
-
-### Changing Colors
-All colors are defined as CSS custom properties in `styles.css`:
-```css
-:root {
-    --primary-pink: #d4698f;
-    --rose: #c85a7a;
-    /* ... etc ... */
-}
-```
-
-### Modifying Content
-All text content is in `index.html`. Simply edit the HTML to update your information.
-
-## ♿ Accessibility
-
-- **Semantic HTML**: Proper heading hierarchy and landmark elements
-- **Contrast**: WCAG AA compliant color contrast ratios
-- **Motion**: Respects `prefers-reduced-motion` setting
-- **Keyboard Navigation**: Fully navigable via keyboard
-- **Icon Library**: Real Font Awesome icons, not emoji substitutes
-- **Focus States**: Clear focus indicators on all interactive elements
-
-## 🎬 Animation Details
-
-- **Scroll Behavior**: 1.2s duration with exponential ease-out
-- **Card Enters**: Staggered fade-in/scale animations
-- **Hero Accents**: Continuous float animations for visual interest
-- **Parallax**: Hero image moves at 0.5x scroll speed
-- **Hover States**: Subtle lift effect (8-10px) with shadow enhancement
-
-## 📱 Responsive Breakpoints
-
-- **Mobile**: < 480px (single column, stacked navigation)
-- **Tablet**: 480px - 768px (adaptive grids)
-- **Desktop**: > 768px (full multi-column layouts)
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup
-- **CSS3**: Modern features (Grid, Flexbox, Custom Properties, animations)
-- **JavaScript**: ES6+ for interactivity
-- **Lenis**: Smooth scrolling library
-- **Font Awesome**: Professional icon library
-- **Google Fonts**: Cormorant Garamond & Inter typefaces
-
-## 📊 Performance
-
-- No heavy frameworks or dependencies (except Lenis CDN)
-- Optimized CSS and JavaScript
-- Lazy-loaded sections with intersection observer
-- Mobile-friendly with progressive enhancement
-
-## 🎯 Quality Standards
-
-This portfolio adheres to the Impeccable design craft floor:
-- ✅ Proper contrast ratios (WCAG AA)
-- ✅ Soft shadows with blur and offset (real depth)
-- ✅ Consistent spacing rhythm
-- ✅ Clear typography hierarchy
-- ✅ Purposeful, coordinated animations
-- ✅ Complete and findable content
-- ✅ Real icon system (Font Awesome, not emoji)
-- ✅ No decorative frosted glass (navbar blur is purposeful)
-- ✅ Responsive across all breakpoints
-- ✅ Semantic, accessible HTML
-
-## 📝 License
-
-This portfolio is your personal website. Feel free to customize and use it as needed.
-
-## 💫 Notes
-
-- Profile photo fallback: If the image fails to load, a gradient placeholder appears
-- Form validation: Active email validation and clear error messages
-- Smooth scroll: Automatically adjusts for users who prefer reduced motion
-- Mobile menu: Navigation adapts gracefully to smaller screens
 
 ---
 
-**Built with elegance, creativity, and attention to craft.** ✨
+## 🌷 Design System & Tokens
+
+### Color Palette
+
+| Token | Hex Value | Usage |
+|---|---|---|
+| `--paper` | `#fdf6f9` | Pale pink graph paper ground |
+| `--pink-ink` | `#43242f` | Plum ink for headings and primary copy |
+| `--pink-700` | `#a13a63` | Deep rose structure, section titles, buttons & footer |
+| `--pink-500` | `#c95c86` | Mid-rose accents and decorative glyphs |
+| `--pink-400` | `#d987a6` | Soft rose rules, outlines & border highlights |
+| `--pink-300 / 200 / 100` | `#e7a8c0` / `#f3cfdd` / `#fbe9f0` | Graph grid rules, card grounds, tag badges |
+| `--muted` | `#75525f` | Secondary text (~5.5:1 WCAG contrast) |
+
+### Typography
+
+- **Display & Headings**: *Bricolage Grotesque* (300–800)
+- **Code & Numerals**: *Fragment Mono*
+
+---
+
+## 🚀 Running Locally
+
+### Option 1: Python HTTP Server (Recommended)
+```bash
+# In the portfolio root directory
+python -m http.server 8000
+```
+Visit `http://localhost:8000` in your web browser.
+
+### Option 2: Node.js http-server
+```bash
+npx http-server -p 8000
+```
+
+### Option 3: VS Code Live Server
+Right-click `index.html` and select **"Open with Live Server"**.
+
+---
+
+## ♿ Accessibility & Standards
+
+- **WCAG AA Compliance**: High contrast ratios on all text elements (`--pink-ink` and `--pink-700` against `--paper`).
+- **Keyboard Navigation**: Full tab ordering, `:focus-visible` rings, and `Escape` key handlers for both the mobile drawer and the Artworks Lightbox.
+- **Reduced Motion Support**: Strictly respects `prefers-reduced-motion: reduce`, cleanly disabling evasion physics loops and replacing animations with instant transitions.
+- **Zero AI Slop**: Strict color token adherence, hand-crafted interactions, semantic landmarks, and purposeful botanical details.
+
+---
+
+## 🌟 Live Deployment
+
+🔗 **Website URL:** [https://sneha423-portfolio.vercel.app/](https://sneha423-portfolio.vercel.app/)
+
+---
+
+<p align="center">
+  <em>Crafted with care, algorithms, and a few flowers 🌸</em>
+</p>
