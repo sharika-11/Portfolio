@@ -89,6 +89,7 @@ portfolio/
     ├── portfolio-project.png
     ├── pcc_logo.png
     ├── profile-photo.jpg
+    ├── Myself.png
     ├── A Moment in the Petal Storm.jpg
     ├── Autumn Trees.jpg
     ├── Boat at Sunset - Landscape View.jpg

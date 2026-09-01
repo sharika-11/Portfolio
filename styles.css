@@ -1646,6 +1646,105 @@ body.site-ready .hero-portrait {
     transform: scale(1.08);
 }
 
+/* PCC Contest Photo Preview inside Spotlight Card */
+.pcc-photo-preview {
+    position: relative;
+    margin-top: 1.15rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    border: 1.5px solid var(--pink-300);
+    box-shadow: 0 4px 16px rgba(161, 58, 99, 0.08);
+    cursor: pointer;
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease, border-color 200ms ease;
+    user-select: none;
+}
+
+.pcc-photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 290px;
+    overflow: hidden;
+    background: var(--pink-100);
+}
+
+.pcc-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pcc-photo-preview:hover {
+    transform: translateY(-3px) scale(1.015);
+    border-color: var(--pink-500);
+    box-shadow: 0 10px 24px rgba(161, 58, 99, 0.16);
+}
+
+.pcc-photo-preview:hover .pcc-photo-img {
+    transform: scale(1.04);
+}
+
+/* Petals around PCC Photo */
+.pcc-photo-blooms {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.pcc-photo-petal {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 250ms ease;
+    font-size: 1.25rem;
+    filter: drop-shadow(0 2px 6px rgba(161, 58, 99, 0.3));
+}
+
+.php-p1 { top: 10px; left: 10px; }
+.php-p2 { top: 10px; right: 10px; }
+.php-p3 { bottom: 10px; right: 10px; }
+
+.pcc-photo-preview:hover .pcc-photo-petal {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pcc-photo-preview:hover .php-p1 { transform: scale(1) rotate(-15deg); }
+.pcc-photo-preview:hover .php-p2 { transform: scale(1) rotate(20deg); }
+.pcc-photo-preview:hover .php-p3 { transform: scale(1) rotate(-10deg); }
+
+.pcc-photo-caption {
+    padding: 0.75rem 1rem 0.85rem;
+    background: rgba(253, 246, 249, 0.95);
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.pcc-photo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--pink-700);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.pcc-photo-note {
+    font-size: 0.84rem;
+    color: var(--pink-ink);
+    font-weight: 550;
+    line-height: 1.35;
+}
+
 /* ===== Artworks Bento Grid ===== */
 .bento-grid {
     display: grid;
