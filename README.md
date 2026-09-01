@@ -81,7 +81,8 @@ The website is styled as a student developer's personal notebook on pink graph p
 portfolio/
 ├── index.html                           # Main single-page application structure
 ├── styles.css                           # "Pink Ruled" design system, bento grid & animations
-├── script.js                            # Particle evasion engine, lightbox & scrollspy
+├── script.js                            # Particle evasion engine, lightbox, Lenis & scrollspy
+├── Resume.pdf                           # Official Curriculum Vitae / Resume
 ├── .gitignore                           # Git ignore rules
 ├── README.md                            # Project documentation & live links
 └── images/                              # Project previews, logos, artworks & photography

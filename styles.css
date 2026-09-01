@@ -2189,6 +2189,10 @@ body.site-ready .hero-portrait {
     align-items: start;
 }
 
+.contact-section-head {
+    margin-bottom: 1.1rem;
+}
+
 .contact-lead {
     font-size: 1.15rem;
     max-width: 38ch;
