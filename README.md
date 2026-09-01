@@ -67,7 +67,6 @@ The website is styled as a student developer's personal notebook on pink graph p
 | Captured Frame | Subject & Atmosphere | Caption Summary |
 |---|---|---|
 | **Crimson Heritage** | Colonial Red Brick Campus & Nature | *Colonial arches and storied architecture framed by lush foliage* |
-| **ICPC-JRC 2026 Contest Organiser & Senior Team** | Contest Photo Booth · Community Memory | *At the UAPFORCES photo booth celebrating contest organization and senior team participation* |
 | **Earthen Glow** | Handheld Clay Diya · Low Light Study | *A clay diya held in stillness, capturing quiet warmth in the dark* |
 | **Lotus on the Water** | Bamboo Water Lily Sculpture & Ripples | *Bamboo floral sculpture rising from serene waters with ripple reflections* |
 | **Petals of Light** | Clay Lantern Floral Shadow Play | *Clay lantern cutouts casting geometric floral light across marble* |
