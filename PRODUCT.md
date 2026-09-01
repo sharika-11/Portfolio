@@ -30,7 +30,7 @@ web — HTML/CSS/JavaScript single-page scroll portfolio
 **Palette:** Pink scale only — paper #fdf6f9, ink plum #43242f, deep rose #a13a63, rose #c95c86, blush tints
 **Typography:** Bricolage Grotesque (display + body) + Fragment Mono (code, numerals, labels)
 **Motion:** AOS scroll reveals (once), one scroll hint; reduced-motion respected
-**Ornaments:** Hand-drawn SVG line flowers; oversized low-contrast mono code punctuation
+**Ornaments:** Curated flower emojis; oversized low-contrast mono code punctuation
 
 ## Design Principles
 - Elegant, not overdone - restrained sparkle details

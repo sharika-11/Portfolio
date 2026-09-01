@@ -112,30 +112,25 @@ const floatingLayer = document.getElementById('heroFloatingLayer');
 
 if (heroSection && floatingLayer) {
     const particleDefinitions = [
-        { type: 'emoji', content: '🌸', x: 7, y: 18, size: '1.4rem' },
+        { type: 'emoji', content: '🌸', x: 7, y: 18, size: '1.45rem' },
         { type: 'code', content: '</>', x: 17, y: 12 },
-        { type: 'emoji', content: '✨', x: 26, y: 22, size: '1.2rem' },
-        { type: 'flower', content: 'svg5', x: 38, y: 14, size: '28px' },
+        { type: 'emoji', content: '✨', x: 26, y: 22, size: '1.25rem' },
+        { type: 'emoji', content: '🌼', x: 38, y: 14, size: '1.35rem' },
         { type: 'code', content: 'fn()', x: 94, y: 8 },
-        { type: 'emoji', content: '💮', x: 96, y: 22, size: '1.3rem' },
+        { type: 'emoji', content: '💮', x: 96, y: 22, size: '1.35rem' },
         { type: 'code', content: '{ }', x: 5, y: 46 },
-        { type: 'emoji', content: '🌺', x: 12, y: 64, size: '1.35rem' },
-        { type: 'flower', content: 'svg4', x: 24, y: 80, size: '26px' },
+        { type: 'emoji', content: '🌺', x: 12, y: 64, size: '1.4rem' },
+        { type: 'emoji', content: '🌷', x: 24, y: 80, size: '1.35rem' },
         { type: 'code', content: '=>', x: 36, y: 88 },
-        { type: 'emoji', content: '🌸', x: 48, y: 90, size: '1.3rem' },
+        { type: 'emoji', content: '🌸', x: 48, y: 90, size: '1.35rem' },
         { type: 'code', content: 'const', x: 58, y: 92 },
-        { type: 'emoji', content: '🌷', x: 96, y: 82, size: '1.35rem' },
-        { type: 'flower', content: 'svg5', x: 96, y: 62, size: '26px' },
+        { type: 'emoji', content: '🌻', x: 96, y: 82, size: '1.4rem' },
+        { type: 'emoji', content: '🌸', x: 96, y: 62, size: '1.35rem' },
         { type: 'code', content: '&&', x: 94, y: 44 },
-        { type: 'emoji', content: '✿', x: 48, y: 6, size: '1.2rem' },
+        { type: 'emoji', content: '✿', x: 48, y: 6, size: '1.25rem' },
         { type: 'code', content: ';', x: 62, y: 10 },
-        { type: 'emoji', content: '✨', x: 3, y: 82, size: '1.15rem' },
+        { type: 'emoji', content: '✨', x: 3, y: 82, size: '1.2rem' },
     ];
-
-    const flowerSVGs = {
-        svg5: `<svg viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>`,
-        svg4: `<svg viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>`
-    };
 
     const particles = [];
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -145,11 +140,7 @@ if (heroSection && floatingLayer) {
         const el = document.createElement('div');
         el.className = `float-item float-item-${def.type}`;
         
-        if (def.type === 'flower') {
-            el.innerHTML = flowerSVGs[def.content] || '';
-            el.style.width = def.size || '24px';
-            el.style.height = def.size || '24px';
-        } else if (def.type === 'emoji') {
+        if (def.type === 'emoji') {
             el.textContent = def.content;
             if (def.size) el.style.fontSize = def.size;
         } else {

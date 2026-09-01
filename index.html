@@ -15,37 +15,27 @@
     <!--
     DIRECTION CONTRACT - "Pink Ruled" (brief-pinned by the user)
     THESIS: a student developer's notebook on pink graph paper: ruled lines,
-    botanical line work, and code punctuation share one sheet; refuses the
+    botanical elements, and code punctuation share one sheet; refuses the
     gradient-hero and icon-card portfolio template.
     OWN-WORLD: pale pink paper with a faint pink rule grid; ink-plum text;
     deep rose structure; Bricolage Grotesque display/body + Fragment Mono for
-    code and numerals; hand-drawn SVG flower line-work; oversized low-contrast
+    code and numerals; delicate flower emojis; oversized low-contrast
     code glyphs.
     STORY: meet Sharika (portrait, facts), read her toolbox, her contest
     record, her off-screen life, then write to her.
     FIRST VIEWPORT: name at display scale left; arch-cropped portrait right
-    with a flower cluster; mono subtitle; two CTAs; one code glyph behind.
+    with flower accents; mono subtitle; two CTAs; one code glyph behind.
     FORM: brief-pinned: shades of pink, horizontal + vertical ruled lines,
-    flowers, code signs, AOS scroll animation, deliberately simple code.
+    flower emojis, code signs, AOS scroll animation, deliberately simple code.
     Seed key 0d2ffacb.
-    FINISH: unreviewed and undocumented is unfinished; this build ends with
-    the finish review, the verdict, and DESIGN.md.
     -->
 
     <!-- ===== Preloader ===== -->
     <div id="preloader" class="preloader" aria-hidden="true">
         <div class="preloader-content">
             <div class="preloader-flower">
-                <svg viewBox="0 0 80 80" class="preloader-svg">
-                    <circle cx="40" cy="40" r="5.5" class="preloader-core"/>
-                    <g class="preloader-petals">
-                        <ellipse cx="40" cy="20" rx="7.5" ry="13" class="preloader-petal pl-1"/>
-                        <ellipse cx="59" cy="26" rx="7.5" ry="13" transform="rotate(72 59 26)" class="preloader-petal pl-2"/>
-                        <ellipse cx="52" cy="54" rx="7.5" ry="13" transform="rotate(144 52 54)" class="preloader-petal pl-3"/>
-                        <ellipse cx="28" cy="54" rx="7.5" ry="13" transform="rotate(216 28 54)" class="preloader-petal pl-4"/>
-                        <ellipse cx="21" cy="26" rx="7.5" ry="13" transform="rotate(288 21 26)" class="preloader-petal pl-5"/>
-                    </g>
-                </svg>
+                <span class="preloader-emoji">🌸</span>
+                <span class="preloader-sparkle">✨</span>
             </div>
             <div class="preloader-brand">
                 <span class="preloader-title">Sneha</span>
@@ -57,10 +47,11 @@
         </div>
     </div>
 
+    <!-- ===== Navbar ===== -->
     <header class="navbar">
         <div class="wrap nav-row">
             <a class="brand" href="#home" aria-label="Sharika Akter Sneha, home">
-                <svg class="brand-flower" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="20" cy="20" r="4"/><ellipse cx="20" cy="10" rx="4.6" ry="7"/><ellipse cx="20" cy="30" rx="4.6" ry="7"/><ellipse cx="10" cy="20" rx="7" ry="4.6"/><ellipse cx="30" cy="20" rx="7" ry="4.6"/></g></svg>
+                <span class="brand-flower" aria-hidden="true">🌸</span>
                 <span class="brand-name">Sneha</span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
@@ -68,51 +59,36 @@
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
             </button>
-            <nav>
+            <nav class="nav-container">
                 <ul class="nav-menu" id="primary-nav">
                     <li>
                         <a href="#about" class="nav-link-interactive">
                             <span class="nav-text">About</span>
-                            <span class="nav-bloom" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
-                            </span>
                             <span class="nav-petal" aria-hidden="true">🌸</span>
                         </a>
                     </li>
                     <li>
                         <a href="#skills" class="nav-link-interactive">
                             <span class="nav-text">Skills</span>
-                            <span class="nav-bloom" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>
-                            </span>
                             <span class="nav-petal" aria-hidden="true">✨</span>
                         </a>
                     </li>
                     <li>
                         <a href="#record" class="nav-link-interactive">
                             <span class="nav-text">Record</span>
-                            <span class="nav-bloom" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
-                            </span>
                             <span class="nav-petal" aria-hidden="true">💮</span>
                         </a>
                     </li>
                     <li>
                         <a href="#hobbies" class="nav-link-interactive">
                             <span class="nav-text">Hobbies</span>
-                            <span class="nav-bloom" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>
-                            </span>
                             <span class="nav-petal" aria-hidden="true">🌺</span>
                         </a>
                     </li>
                     <li>
                         <a href="#contact" class="nav-link-interactive">
                             <span class="nav-text">Contact</span>
-                            <span class="nav-bloom" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="nav-bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
-                            </span>
-                            <span class="nav-petal" aria-hidden="true">🌸</span>
+                            <span class="nav-petal" aria-hidden="true">🌷</span>
                         </a>
                     </li>
                 </ul>
@@ -133,25 +109,19 @@
                     <h1 class="hero-name-interactive" tabindex="0" aria-label="Sharika Akter Sneha">
                         <span class="name-word word-sharika">
                             Sharika
-                            <span class="name-bloom bloom-1" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
-                            </span>
                             <span class="name-petal petal-1" aria-hidden="true">🌸</span>
+                            <span class="name-petal petal-top" aria-hidden="true">🌷</span>
                         </span>
                         <span class="name-word word-akter">
                             Akter
-                            <span class="name-bloom bloom-2" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>
-                            </span>
                             <span class="name-petal petal-2" aria-hidden="true">✨</span>
+                            <span class="name-petal petal-mid" aria-hidden="true">🌼</span>
                         </span>
                         <span class="name-word word-sneha">
                             Sneha
-                            <span class="name-bloom bloom-3" aria-hidden="true">
-                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
-                            </span>
                             <span class="name-petal petal-3" aria-hidden="true">💮</span>
                             <span class="name-sparkle sparkle-1" aria-hidden="true">✦</span>
+                            <span class="name-petal petal-end" aria-hidden="true">🌺</span>
                         </span>
                     </h1>
                     <p class="hero-sub">aspiring programmer <em>·</em> competitive coder <em>·</em> creative mind</p>
@@ -163,7 +133,7 @@
                     <div class="hero-cta">
                         <a href="#contact" class="btn btn-solid btn-touch">
                             <span class="btn-text">Get in touch</span>
-                            <span class="btn-flower" aria-hidden="true">✿</span>
+                            <span class="btn-flower" aria-hidden="true">🌸</span>
                         </a>
                         <a href="#record" class="btn btn-ghost btn-resume">
                             <span class="btn-text">See my resume</span>
@@ -177,26 +147,20 @@
                             <img id="profilePhoto" src="./profile-photo.jpg" alt="Sharika Akter Sneha" width="720" height="960">
                         </div>
 
-                        <!-- Non-overlapping blooming flowers around the portrait -->
+                        <!-- Blooming flower emojis around the portrait -->
                         <div class="portrait-blooms" aria-hidden="true">
-                            <span class="portrait-bloom pb-top-center">
-                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
-                            </span>
-                            <span class="portrait-bloom pb-top-right">
-                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="3"/><path d="M20 20 L20 6 C24 8 28 14 20 20 Z"/><path d="M20 20 L34 20 C32 24 26 28 20 20 Z"/><path d="M20 20 L20 34 C16 32 12 26 20 20 Z"/><path d="M20 20 L6 20 C8 16 14 12 20 20 Z"/></g></svg>
-                            </span>
-                            <span class="portrait-bloom pb-bottom-left">
-                                <svg viewBox="0 0 40 40" class="bloom-svg"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
-                            </span>
-                            <span class="portrait-petal pp-top-sparkle">✨</span>
-                            <span class="portrait-petal pp-mid-left">🌸</span>
-                            <span class="portrait-petal pp-mid-right">💮</span>
+                            <span class="portrait-petal pp-top-center">🌸</span>
+                            <span class="portrait-petal pp-top-right">🌼</span>
                             <span class="portrait-petal pp-bottom-left">🌺</span>
+                            <span class="portrait-petal pp-top-sparkle">✨</span>
+                            <span class="portrait-petal pp-mid-left">🌷</span>
+                            <span class="portrait-petal pp-mid-right">💮</span>
+                            <span class="portrait-petal pp-bottom-right">🌻</span>
                         </div>
                     </div>
 
-                    <svg class="flower flower-hero-a" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="32" cy="32" r="6"/><g><ellipse cx="32" cy="15" rx="7" ry="11"/><ellipse cx="47" cy="25" rx="7" ry="11" transform="rotate(72 47 25)"/><ellipse cx="41" cy="43.5" rx="7" ry="11" transform="rotate(144 41 43.5)"/><ellipse cx="23" cy="43.5" rx="7" ry="11" transform="rotate(216 23 43.5)"/><ellipse cx="17" cy="25" rx="7" ry="11" transform="rotate(288 17 25)"/></g></g></svg>
-                    <svg class="flower flower-hero-b" viewBox="0 0 40 80" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M20 78 V10"/><path d="M20 62 C10 58 6 50 6 42 C14 46 20 52 20 62Z"/><path d="M20 48 C30 44 34 36 34 28 C26 32 20 38 20 48Z"/><path d="M20 34 C12 30 8 22 8 14 C16 18 20 24 20 34Z"/></g></svg>
+                    <span class="flower-sticker flower-hero-a" aria-hidden="true">🌸</span>
+                    <span class="flower-sticker flower-hero-b" aria-hidden="true">🌺</span>
                 </div>
             </div>
             <a class="scroll-hint" href="#about" aria-label="Scroll to about section">
@@ -211,7 +175,7 @@
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
                     <h2>About</h2>
-                    <svg class="flower flower-title" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <span class="section-flower" aria-hidden="true">🌸</span>
                 </header>
                 <p class="section-intro" data-aos="fade-up">
                     I'm a student who treats problem-solving like a craft and design like a language.
@@ -245,17 +209,59 @@
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
                     <h2>Toolbox</h2>
-                    <svg class="flower flower-title" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <span class="section-flower" aria-hidden="true">✨</span>
                 </header>
                 <p class="section-intro" data-aos="fade-up">Languages I think in, and the ones this very page is built with.</p>
                 <ul class="skills-index" data-aos="fade-up" data-aos-delay="100">
-                    <li><span class="skill-name">C</span><span class="skill-note">first language: fundamentals &amp; DSA</span></li>
-                    <li><span class="skill-name">C++</span><span class="skill-note">competitive programming practice</span></li>
-                    <li><span class="skill-name">Java</span><span class="skill-note">object-oriented coursework &amp; projects</span></li>
-                    <li><span class="skill-name">Python</span><span class="skill-note">scripting &amp; problem practice</span></li>
-                    <li><span class="skill-name">HTML</span><span class="skill-note">semantic markup (this site)</span></li>
-                    <li><span class="skill-name">CSS</span><span class="skill-note">layout &amp; responsive design (this site)</span></li>
-                    <li><span class="skill-name">SQL <small>(Oracle)</small></span><span class="skill-note">queries, joins &amp; database coursework</span></li>
+                    <li>
+                        <span class="skill-main">
+                            <span class="skill-bullet" aria-hidden="true">🌸</span>
+                            <span class="skill-name">C</span>
+                        </span>
+                        <span class="skill-note">first language: fundamentals &amp; DSA</span>
+                    </li>
+                    <li>
+                        <span class="skill-main">
+                            <span class="skill-bullet" aria-hidden="true">✨</span>
+                            <span class="skill-name">C++</span>
+                        </span>
+                        <span class="skill-note">competitive programming practice</span>
+                    </li>
+                    <li>
+                        <span class="skill-main">
+                            <span class="skill-bullet" aria-hidden="true">🌼</span>
+                            <span class="skill-name">Java</span>
+                        </span>
+                        <span class="skill-note">object-oriented coursework &amp; projects</span>
+                    </li>
+                    <li>
+                        <span class="skill-main">
+                            <span class="skill-bullet" aria-hidden="true">💮</span>
+                            <span class="skill-name">Python</span>
+                        </span>
+                        <span class="skill-note">scripting &amp; problem practice</span>
+                    </li>
+                    <li>
+                        <span class="skill-main">
+                            <span class="skill-bullet" aria-hidden="true">🌷</span>
+                            <span class="skill-name">HTML</span>
+                        </span>
+                        <span class="skill-note">semantic markup (this site)</span>
+                    </li>
+                    <li>
+                        <span class="skill-main">
+                            <span class="skill-bullet" aria-hidden="true">🌺</span>
+                            <span class="skill-name">CSS</span>
+                        </span>
+                        <span class="skill-note">layout &amp; responsive design (this site)</span>
+                    </li>
+                    <li>
+                        <span class="skill-main">
+                            <span class="skill-bullet" aria-hidden="true">🌻</span>
+                            <span class="skill-name">SQL <small>(Oracle)</small></span>
+                        </span>
+                        <span class="skill-note">queries, joins &amp; database coursework</span>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -266,41 +272,41 @@
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
                     <h2>Record</h2>
-                    <svg class="flower flower-title" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <span class="section-flower" aria-hidden="true">💮</span>
                 </header>
                 <p class="section-intro" data-aos="fade-up">Contests, training and community, in the order they happened.</p>
                 <ol class="timeline">
                     <li data-aos="fade-up">
                         <span class="year">2025</span>
-                        <div>
+                        <div class="timeline-content">
                             <h3>ICPC Dhaka Regional (Preliminary)</h3>
                             <p>Second ICPC appearance. Team problem-solving and time management under contest pressure.</p>
                         </div>
                     </li>
                     <li data-aos="fade-up" data-aos-delay="80">
                         <span class="year">2024</span>
-                        <div>
+                        <div class="timeline-content">
                             <h3>ICPC Dhaka Regional (Preliminary)</h3>
                             <p>First taste of the region's toughest contest, and the reason I train weekly.</p>
                         </div>
                     </li>
                     <li data-aos="fade-up" data-aos-delay="120">
                         <span class="year">&mdash;</span>
-                        <div>
+                        <div class="timeline-content">
                             <h3>Math Olympiad</h3>
                             <p>Regional mathematics olympiad participant; where I learned to love a clean proof.</p>
                         </div>
                     </li>
                     <li data-aos="fade-up" data-aos-delay="160">
                         <span class="year">&mdash;</span>
-                        <div>
+                        <div class="timeline-content">
                             <h3>Programming training</h3>
                             <p>Structured practice on Codeforces and other online judges: problems, upsolving, repeat.</p>
                         </div>
                     </li>
                     <li data-aos="fade-up" data-aos-delay="200">
                         <span class="year">&mdash;</span>
-                        <div>
+                        <div class="timeline-content">
                             <h3>Club &amp; community</h3>
                             <p>Active member of the university programming contest club; volunteer at campus events.</p>
                         </div>
@@ -314,21 +320,21 @@
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
                     <h2>Off screen</h2>
-                    <svg class="flower flower-title" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <span class="section-flower" aria-hidden="true">🌺</span>
                 </header>
                 <div class="hobby-cols">
-                    <div data-aos="fade-up">
-                        <svg class="flower flower-hobby" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <div class="hobby-card" data-aos="fade-up">
+                        <span class="hobby-flower" aria-hidden="true">🌸</span>
                         <h3>Photography</h3>
                         <p>Frames from Dhaka's steps, streets and gardens: my way of seeing differently.</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="80">
-                        <svg class="flower flower-hobby" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <div class="hobby-card" data-aos="fade-up" data-aos-delay="80">
+                        <span class="hobby-flower" aria-hidden="true">🌺</span>
                         <h3>Singing</h3>
                         <p>My escape from the logical world: casual performances, always in tune with family.</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="160">
-                        <svg class="flower flower-hobby" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <div class="hobby-card" data-aos="fade-up" data-aos-delay="160">
+                        <span class="hobby-flower" aria-hidden="true">🌷</span>
                         <h3>Canva design</h3>
                         <p>Posters and social graphics: aesthetics and messaging, combined on a canvas.</p>
                     </div>
@@ -342,7 +348,7 @@
             <div class="wrap">
                 <header class="section-head" data-aos="fade-up">
                     <h2>Say hello</h2>
-                    <svg class="flower flower-title" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                    <span class="section-flower" aria-hidden="true">🌷</span>
                 </header>
                 <div class="contact-grid">
                     <div class="contact-info" data-aos="fade-up">
@@ -372,7 +378,10 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-solid">Send message</button>
+                        <button type="submit" class="btn btn-solid">
+                            <span class="btn-text">Send message</span>
+                            <span class="btn-flower" aria-hidden="true">🌸</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -383,7 +392,7 @@
         <div class="wrap footer-row">
             <p>&copy; <span id="year">2026</span> Sharika Akter Sneha</p>
             <p class="footer-note">built by hand with HTML, CSS &amp; a few flowers
-                <svg class="flower flower-footer" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="20" cy="20" r="3.4"/><ellipse cx="20" cy="11" rx="4" ry="6"/><ellipse cx="20" cy="29" rx="4" ry="6"/><ellipse cx="11" cy="20" rx="6" ry="4"/><ellipse cx="29" cy="20" rx="6" ry="4"/></g></svg>
+                <span class="flower-footer" aria-hidden="true">🌸</span>
             </p>
         </div>
     </footer>
