@@ -6,7 +6,7 @@
 
 > 🌸 **Live Portfolio:** [https://sneha423-portfolio.vercel.app/](https://sneha423-portfolio.vercel.app/)
 
-A personal developer portfolio and creative showcase for **Sharika Akter Sneha** — 3rd-year CSE student at the *University of Asia Pacific*, Dhaka, competitive programmer, and visual artist.
+A personal developer portfolio and creative showcase for **Sharika Akter Sneha** — 3rd-year CSE student at the *University of Asia Pacific*, Dhaka, competitive coder, and creative mind.
 
 ---
 
@@ -16,18 +16,28 @@ The website is styled as a student developer's personal notebook on pink graph p
 
 ### ✨ Key Highlights
 
-- **🌸 Botanical Bloom Micro-Interactions**: Interactive floral emojis (`🌸`, `🌺`, `🌼`, `💮`, `🌷`, `✨`) that blossom dynamically on hover across the hero name, arch portrait, navigation links, and bento artwork cards.
+- **🎓 Academic Grounding**: Dedicated **Education** section detailing undergraduate study at *University of Asia Pacific* (3rd Year 1st Semester).
+- **🌸 Botanical Bloom Micro-Interactions**: Interactive floral emojis (`🌸`, `🌺`, `🌼`, `💮`, `🌷`, `✨`) that blossom dynamically on hover across the hero name, arch portrait, navigation links, and cards.
 - **🎨 Bento Box Artworks Showcase**: An asymmetric Bento Grid featuring fine artworks, watercolors, and digital paintings with flower-revealing hover effects and a high-resolution Lightbox viewer.
+- **💻 Built Code Projects**: Direct showcases for the *Library Management System* (JavaFX), *Online Food Ordering System* (DBMS), and the *Personal Portfolio* itself.
+- **🏆 Contest & Community Record**: Timeline documenting ICPC Dhaka Regionals, Math Olympiad, training, and active involvement in the **UAP-Programming Contest Club (PCC)**.
 - **📐 Flower-Themed Section Dividers**: Frosted botanical medallions with dual hairline gradient rules and subtle ("shuttle") section background palette transitions.
 - **🍃 Ambient Particle Evasion Physics**: Floating floral marks and code glyphs drift harmoniously and scurry away upon cursor proximity with physics spring tension.
-- **📱 Responsive Mobile Hero**: Adaptive CSS Grid (`display: contents`) positioning the portrait photograph directly beside the hero name on mobile devices.
-- **⚡ 2.0s Themed Preloader**: Elegant graph-paper preloader with blooming flower animation and progress tracking.
+- **📱 Responsive Mobile Hero**: Adaptive CSS Grid positioning the portrait photograph directly beside the hero name on mobile devices.
+- **⚡ Phosphor Icons**: Integrated crisp vector iconography from [Phosphor Icons](https://phosphoricons.com/) styled to harmonize with the soft pink notebook aesthetic.
+
+---
+
+## 🎓 Education
+
+- **Degree**: B.Sc. (Eng.) in Computer Science and Engineering
+- **Institution**: University of Asia Pacific, Dhaka, Bangladesh
+- **Academic Standing**: 3rd Year · 1st Semester
+- **Focus Areas**: Data Structures & Algorithms, Object-Oriented Programming (Java/C++), Database Management Systems (SQL), Discrete Mathematics & Logic
 
 ---
 
 ## 💻 Projects Showcase
-
-The **Projects** section features technical implementations spanning desktop applications, full-stack database systems, and creative development:
 
 | Project | Tech Stack | Type | Links |
 |---|---|---|---|
@@ -38,8 +48,6 @@ The **Projects** section features technical implementations spanning desktop app
 ---
 
 ## 🎨 Artworks Gallery (Bento Box)
-
-The **Artworks** section organizes visual pieces in a modern Bento layout:
 
 | Artwork Piece | Type / Theme | Bento Grid Role |
 |---|---|---|
@@ -60,14 +68,13 @@ portfolio/
 ├── index.html                           # Main single-page application structure
 ├── styles.css                           # "Pink Ruled" design system, bento grid & animations
 ├── script.js                            # Particle evasion engine, lightbox & scrollspy
-├── vercel.json                          # Vercel deployment configuration
-├── DESIGN.md                            # Complete design system & token documentation
-├── PRODUCT.md                           # Product context, goals & key audience
+├── .gitignore                           # Git ignore rules
 ├── README.md                            # Project documentation & live links
-└── images/                              # Project previews & artwork gallery
+└── images/                              # Project previews, logos & artwork gallery
     ├── Library-Management-System.png
     ├── Online-Food-Ordering-System.png
     ├── portfolio-project.png
+    ├── pcc_logo.png
     ├── A Moment in the Petal Storm.jpg
     ├── Autumn Trees.jpg
     ├── Boat at Sunset - Landscape View.jpg
@@ -98,6 +105,17 @@ portfolio/
 
 - **Display & Headings**: *Bricolage Grotesque* (300–800)
 - **Code & Numerals**: *Fragment Mono*
+- **Icons**: *Phosphor Icons* (`@phosphor-icons/web`)
+
+---
+
+## 🌐 Connect
+
+- **GitHub**: [github.com/sharika-11](https://github.com/sharika-11)
+- **Codeforces**: [codeforces.com/profile/sharika_11](https://codeforces.com/profile/sharika_11)
+- **LinkedIn**: [linkedin.com/in/sharika-akter-sneha](https://www.linkedin.com/in/sharika-akter-sneha/)
+- **Instagram**: [instagram.com/madhobilota423](https://www.instagram.com/madhobilota423/)
+- **Email**: [sharikaakter423sp@gmail.com](mailto:sharikaakter423sp@gmail.com)
 
 ---
 
@@ -105,7 +123,6 @@ portfolio/
 
 ### Option 1: Python HTTP Server (Recommended)
 ```bash
-# In the portfolio root directory
 python -m http.server 8000
 ```
 Visit `http://localhost:8000` in your web browser.

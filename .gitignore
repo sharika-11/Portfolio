@@ -1,0 +1,11 @@
+# Development & IDE Configs
+.claude/
+.codex/
+.impeccable/
+DESIGN.md
+PRODUCT.md
+
+# System & Cache
+.DS_Store
+Thumbs.db
+*.log
