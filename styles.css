@@ -764,6 +764,7 @@ body.site-ready .hero-portrait {
 
 .glyph-about { font-size: clamp(7rem, 16vw, 13rem); top: 4%; right: 6%; }
 .glyph-skills { font-size: clamp(7rem, 16vw, 13rem); bottom: 2%; left: 2%; }
+.glyph-projects { font-size: clamp(7rem, 16vw, 13rem); top: 5%; right: 4%; }
 .glyph-record { font-size: clamp(7rem, 15vw, 12rem); top: 6%; right: 4%; }
 .glyph-artworks { font-size: clamp(7rem, 16vw, 13rem); top: 4%; right: 3%; }
 .glyph-contact { font-size: clamp(8rem, 18vw, 15rem); bottom: 4%; right: 2%; }
@@ -851,6 +852,10 @@ body.site-ready .hero-portrait {
 
 .section-skills {
     background: linear-gradient(180deg, rgba(231, 168, 192, 0.14), rgba(243, 207, 221, 0.08));
+}
+
+.section-projects {
+    background: linear-gradient(180deg, rgba(251, 233, 240, 0.45), rgba(253, 246, 249, 0.65));
 }
 
 .section-record {
@@ -1029,6 +1034,149 @@ body.site-ready .hero-portrait {
     padding: 4px 10px;
     border-radius: 6px;
     text-align: right;
+}
+
+/* ===== Projects Section ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 1.85rem);
+    align-items: stretch;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(161, 58, 99, 0.05);
+    transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 320ms ease, border-color 260ms ease;
+    isolation: isolate;
+    user-select: none;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--pink-400);
+    box-shadow: 0 16px 36px rgba(161, 58, 99, 0.14);
+}
+
+.project-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--pink-100);
+    border-bottom: 1px solid var(--rule);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+    filter: brightness(1.02);
+}
+
+/* Flower Revealing Bloom Emojis on Project Hover */
+.project-blooms {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.project-blooms .project-petal {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: transform 460ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease;
+    transform-origin: center;
+    filter: drop-shadow(0 3px 8px rgba(161, 58, 99, 0.35));
+    font-size: 1.45rem;
+}
+
+.project-card:hover .project-petal,
+.project-card:focus-visible .project-petal {
+    opacity: 1;
+}
+
+.project-card:hover .pp-top-left { transform: scale(1) rotate(-22deg) translate(2px, 2px); transition-delay: 20ms; }
+.project-card:hover .pp-top-right { transform: scale(1) rotate(26deg) translate(-2px, 2px); transition-delay: 60ms; }
+.project-card:hover .pp-bottom-left { transform: scale(1) rotate(-32deg) translate(2px, -2px); transition-delay: 100ms; }
+.project-card:hover .pp-bottom-right { transform: scale(1) rotate(28deg) translate(-2px, -2px); transition-delay: 140ms; }
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.4rem 1.5rem 1.5rem;
+    gap: 0.65rem;
+}
+
+.project-badge {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pink-700);
+    font-weight: 600;
+}
+
+.project-title {
+    font-size: 1.28rem;
+    font-weight: 750;
+    color: var(--pink-ink);
+    letter-spacing: -0.01em;
+    transition: color 200ms ease;
+}
+
+.project-card:hover .project-title {
+    color: var(--pink-700);
+}
+
+.project-desc {
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.tag-pill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--pink-700);
+    background: rgba(243, 207, 221, 0.4);
+    border: 1px solid rgba(201, 92, 134, 0.22);
+    padding: 3px 9px;
+    border-radius: 6px;
+}
+
+.project-footer {
+    margin-top: auto;
+    padding-top: 0.6rem;
+}
+
+.btn-project {
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.94rem;
+    padding: 0.65rem 1.4rem;
 }
 
 /* ===== Record timeline ===== */
@@ -1887,6 +2035,10 @@ body.site-ready .hero-portrait {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -1943,6 +2095,11 @@ body.site-ready .hero-portrait {
         align-self: flex-start;
     }
 
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
     .timeline li {
         grid-template-columns: 1fr;
         gap: 0.6rem;
@@ -1982,7 +2139,7 @@ body.site-ready .hero-portrait {
     }
 
     .glyph-hero { font-size: 6.5rem; top: 4%; }
-    .glyph-about, .glyph-skills, .glyph-record, .glyph-artworks, .glyph-contact { font-size: 5rem; }
+    .glyph-about, .glyph-skills, .glyph-projects, .glyph-record, .glyph-artworks, .glyph-contact { font-size: 5rem; }
 }
 
 @media (max-height: 640px) {

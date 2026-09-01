@@ -25,9 +25,21 @@ The website is styled as a student developer's personal notebook on pink graph p
 
 ---
 
+## 💻 Projects Showcase
+
+The **Projects** section features technical implementations spanning desktop applications, full-stack database systems, and creative development:
+
+| Project | Tech Stack | Type | Links |
+|---|---|---|---|
+| **Library Management System** | Java, JavaFX, Scene Builder, OOP | Desktop Application | [GitHub Repository ↗](https://github.com/sharika-11/Library-Management-System-JavaFX-Project) |
+| **Online Food Ordering System** | DBMS, SQL, Web Frontend, Vercel | Full-Stack Web App | [Live Demo ↗](https://online-food-ordering-system-dbms.vercel.app/) |
+| **"Pink Ruled" Personal Portfolio** | HTML5, CSS3, Vanilla JS, Particle Physics | Single-Page Web App | [Live Website ↗](https://sneha423-portfolio.vercel.app/) |
+
+---
+
 ## 🎨 Artworks Gallery (Bento Box)
 
-The newly created **Artworks** section organizes visual pieces in a modern Bento layout:
+The **Artworks** section organizes visual pieces in a modern Bento layout:
 
 | Artwork Piece | Type / Theme | Bento Grid Role |
 |---|---|---|
@@ -48,10 +60,14 @@ portfolio/
 ├── index.html                           # Main single-page application structure
 ├── styles.css                           # "Pink Ruled" design system, bento grid & animations
 ├── script.js                            # Particle evasion engine, lightbox & scrollspy
+├── vercel.json                          # Vercel deployment configuration
 ├── DESIGN.md                            # Complete design system & token documentation
 ├── PRODUCT.md                           # Product context, goals & key audience
 ├── README.md                            # Project documentation & live links
-└── images/                              # Image assets & artwork gallery
+└── images/                              # Project previews & artwork gallery
+    ├── Library-Management-System.png
+    ├── Online-Food-Ordering-System.png
+    ├── portfolio-project.png
     ├── A Moment in the Petal Storm.jpg
     ├── Autumn Trees.jpg
     ├── Boat at Sunset - Landscape View.jpg
