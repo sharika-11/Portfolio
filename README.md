@@ -19,8 +19,9 @@ The website is styled as a student developer's personal notebook on pink graph p
 - **🎓 Academic Grounding**: Dedicated **Education** section detailing undergraduate study at *University of Asia Pacific* (3rd Year 1st Semester).
 - **🌸 Botanical Bloom Micro-Interactions**: Interactive floral emojis (`🌸`, `🌺`, `🌼`, `💮`, `🌷`, `✨`) that blossom dynamically on hover across the hero name, arch portrait, navigation links, and cards.
 - **🎨 Bento Box Artworks Showcase**: An asymmetric Bento Grid featuring fine artworks, watercolors, and digital paintings with flower-revealing hover effects and a high-resolution Lightbox viewer.
+- **📸 Curated Photography Gallery**: Dedicated frames capturing natural light, night shadows, lunar flora, and architectural heritage with interactive zoom and lightbox view.
 - **💻 Built Code Projects**: Direct showcases for the *Library Management System* (JavaFX), *Online Food Ordering System* (DBMS), and the *Personal Portfolio* itself.
-- **🏆 Contest & Community Record**: Timeline documenting ICPC Dhaka Regionals, Math Olympiad, training, and active involvement in the **UAP-Programming Contest Club (PCC)**.
+- **🏆 Contest & Community Record**: Two-column layout featuring chronological contest milestones on the left and a special illuminated spotlight card for the **UAP-Programming Contest Club (PCC)** on the right.
 - **📐 Flower-Themed Section Dividers**: Frosted botanical medallions with dual hairline gradient rules and subtle ("shuttle") section background palette transitions.
 - **🍃 Ambient Particle Evasion Physics**: Floating floral marks and code glyphs drift harmoniously and scurry away upon cursor proximity with physics spring tension.
 - **📱 Responsive Mobile Hero**: Adaptive CSS Grid positioning the portrait photograph directly beside the hero name on mobile devices.
@@ -61,6 +62,18 @@ The website is styled as a student developer's personal notebook on pink graph p
 
 ---
 
+## 📸 Photography Gallery
+
+| Captured Frame | Subject & Atmosphere | Caption Summary |
+|---|---|---|
+| **Crimson Heritage** | Colonial Red Brick Campus & Nature | *Colonial arches and storied architecture framed by lush foliage* |
+| **Earthen Glow** | Handheld Clay Diya · Low Light Study | *A clay diya held in stillness, capturing quiet warmth in the dark* |
+| **Lotus on the Water** | Bamboo Water Lily Sculpture & Ripples | *Bamboo floral sculpture rising from serene waters with ripple reflections* |
+| **Petals of Light** | Clay Lantern Floral Shadow Play | *Clay lantern cutouts casting geometric floral light across marble* |
+| **Rooftop Moonlight** | Full Moon & Rooftop Garden Greens | *Full moon glowing through silver clouds over tranquil rooftop plants* |
+
+---
+
 ## 🗂️ Project Structure
 
 ```
@@ -70,11 +83,12 @@ portfolio/
 ├── script.js                            # Particle evasion engine, lightbox & scrollspy
 ├── .gitignore                           # Git ignore rules
 ├── README.md                            # Project documentation & live links
-└── images/                              # Project previews, logos & artwork gallery
+└── images/                              # Project previews, logos, artworks & photography
     ├── Library-Management-System.png
     ├── Online-Food-Ordering-System.png
     ├── portfolio-project.png
     ├── pcc_logo.png
+    ├── profile-photo.jpg
     ├── A Moment in the Petal Storm.jpg
     ├── Autumn Trees.jpg
     ├── Boat at Sunset - Landscape View.jpg
@@ -82,7 +96,11 @@ portfolio/
     ├── Village Landscape.jpg
     ├── Waterfall & Trees.jpg
     ├── Whispers of the Cold Breeze.jpg
-    └── profile-photo.jpg
+    ├── Crimson Heritage.jpg
+    ├── Earthen Glow.jpg
+    ├── Lotus on the Water.jpg
+    ├── Petals of Light.jpg
+    └── Rooftop Moonlight.jpg
 ```
 
 ---

@@ -768,6 +768,7 @@ body.site-ready .hero-portrait {
 .glyph-projects { font-size: clamp(7rem, 16vw, 13rem); top: 5%; right: 4%; }
 .glyph-record { font-size: clamp(7rem, 15vw, 12rem); top: 6%; right: 4%; }
 .glyph-artworks { font-size: clamp(7rem, 16vw, 13rem); top: 4%; right: 3%; }
+.glyph-photography { font-size: clamp(7rem, 16vw, 13rem); top: 4%; right: 4%; }
 .glyph-contact { font-size: clamp(8rem, 18vw, 15rem); bottom: 4%; right: 2%; }
 
 /* ===== Section Dividers ===== */
@@ -869,6 +870,11 @@ body.site-ready .hero-portrait {
 
 .section-artworks {
     background: linear-gradient(180deg, rgba(243, 207, 221, 0.26), rgba(251, 233, 240, 0.52), rgba(253, 246, 249, 0.75));
+    position: relative;
+}
+
+.section-photography {
+    background: linear-gradient(180deg, rgba(251, 233, 240, 0.55), rgba(243, 207, 221, 0.28), rgba(253, 246, 249, 0.65));
     position: relative;
 }
 
@@ -1329,10 +1335,27 @@ body.site-ready .hero-portrait {
     padding: 0.65rem 1.4rem;
 }
 
-/* ===== Record timeline ===== */
+/* ===== Record Section & Layout ===== */
+.record-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: clamp(1.5rem, 3.5vw, 2.8rem);
+    align-items: start;
+}
+
+.record-timeline-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.record-spotlight-col {
+    position: sticky;
+    top: calc(var(--nav-h) + 1.5rem);
+}
+
 .timeline {
     list-style: none;
-    max-width: 880px;
+    width: 100%;
     display: grid;
     gap: 1rem;
 }
@@ -1340,10 +1363,10 @@ body.site-ready .hero-portrait {
 .timeline li {
     display: grid;
     grid-template-columns: 86px 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
     align-items: start;
-    padding: 1.35rem 1.5rem;
-    background: rgba(255, 255, 255, 0.65);
+    padding: 1.35rem 1.4rem;
+    background: rgba(255, 255, 255, 0.68);
     border: 1px solid var(--rule);
     border-radius: 16px;
     backdrop-filter: blur(8px);
@@ -1353,12 +1376,12 @@ body.site-ready .hero-portrait {
 
 .timeline .year {
     font-family: var(--font-mono);
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: var(--pink-700);
     background: var(--pink-100);
     border: 1px solid var(--pink-300);
-    padding: 4px 10px;
+    padding: 4px 8px;
     border-radius: 8px;
     text-align: center;
     display: inline-block;
@@ -1366,7 +1389,7 @@ body.site-ready .hero-portrait {
 }
 
 .timeline h3 {
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     margin-bottom: 0.35rem;
     color: var(--pink-ink);
     transition: color 200ms ease;
@@ -1374,8 +1397,7 @@ body.site-ready .hero-portrait {
 
 .timeline p {
     color: var(--muted);
-    font-size: 0.97rem;
-    max-width: 58ch;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
@@ -1390,45 +1412,238 @@ body.site-ready .hero-portrait {
     color: var(--pink-700);
 }
 
-/* Timeline PCC Logo styles */
-.timeline-head-with-logo {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.15rem;
+/* ===== UAP-PCC Spotlight Feature Card (Special Record Card) ===== */
+.pcc-spotlight-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(253, 246, 249, 0.88) 100%);
+    border: 1.5px solid var(--pink-300);
+    border-radius: 22px;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(161, 58, 99, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 320ms ease, border-color 240ms ease;
 }
 
-.timeline-logo-wrap {
-    width: 52px;
-    height: 52px;
-    border-radius: 12px;
-    overflow: hidden;
+.pcc-spotlight-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--pink-500);
+    box-shadow: 0 16px 40px rgba(161, 58, 99, 0.16), 0 0 24px rgba(201, 92, 134, 0.15);
+}
+
+/* PCC Card Blooms */
+.pcc-card-blooms {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pcc-petal {
+    position: absolute;
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease;
+    filter: drop-shadow(0 2px 6px rgba(161, 58, 99, 0.2));
+}
+
+.pcc-petal-1 {
+    top: 14px;
+    right: 18px;
+    font-size: 1.4rem;
+    opacity: 0.75;
+}
+
+.pcc-petal-2 {
+    bottom: 18px;
+    right: 20px;
+    font-size: 1.25rem;
+    opacity: 0.6;
+}
+
+.pcc-petal-3 {
+    top: 50%;
+    right: 10px;
+    font-size: 1.15rem;
+    opacity: 0;
+    transform: scale(0) rotate(-20deg);
+}
+
+.pcc-spotlight-card:hover .pcc-petal-1 {
+    transform: scale(1.25) rotate(25deg);
+    opacity: 1;
+}
+
+.pcc-spotlight-card:hover .pcc-petal-2 {
+    transform: scale(1.3) rotate(-30deg);
+    opacity: 0.95;
+}
+
+.pcc-spotlight-card:hover .pcc-petal-3 {
+    opacity: 0.85;
+    transform: scale(1.15) rotate(15deg) translateX(-4px);
+}
+
+.pcc-badge-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 2;
+}
+
+.pcc-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, var(--pink-700), #b84370);
+    padding: 4px 12px;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(161, 58, 99, 0.25);
+}
+
+.pcc-tenure {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--pink-700);
+    background: var(--pink-100);
+    border: 1px solid var(--pink-300);
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.pcc-logo-container {
+    position: relative;
+    width: 82px;
+    height: 82px;
+    margin: 0.35rem 0 1.15rem;
+    border-radius: 18px;
     background: #fff;
-    border: 1.5px solid var(--pink-200);
-    box-shadow: 0 2px 8px rgba(161, 58, 99, 0.08);
+    border: 2px solid var(--pink-200);
+    box-shadow: 0 6px 20px rgba(161, 58, 99, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    padding: 4px;
-    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 200ms ease, box-shadow 200ms ease;
+    padding: 7px;
+    z-index: 2;
+    transition: transform 340ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 240ms ease, box-shadow 240ms ease;
 }
 
-.timeline-logo {
+.pcc-logo-glow {
+    position: absolute;
+    inset: -6px;
+    border-radius: 22px;
+    background: radial-gradient(circle, rgba(201, 92, 134, 0.3) 0%, transparent 70%);
+    opacity: 0.6;
+    filter: blur(8px);
+    z-index: -1;
+    transition: opacity 300ms ease;
+}
+
+.pcc-spotlight-card:hover .pcc-logo-container {
+    transform: scale(1.08) rotate(-4deg);
+    border-color: var(--pink-500);
+    box-shadow: 0 10px 26px rgba(161, 58, 99, 0.2);
+}
+
+.pcc-spotlight-card:hover .pcc-logo-glow {
+    opacity: 1;
+}
+
+.pcc-spotlight-logo {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.timeline-with-logo:hover .timeline-logo-wrap {
-    transform: scale(1.08) rotate(4deg);
-    border-color: var(--pink-400);
-    box-shadow: 0 6px 16px rgba(161, 58, 99, 0.16);
-}
-
-.timeline-title-wrap {
+.pcc-card-body {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: 0.6rem;
+    position: relative;
+    z-index: 2;
+}
+
+.pcc-card-title {
+    font-size: clamp(1.18rem, 2.2vw, 1.4rem);
+    font-weight: 750;
+    color: var(--pink-ink);
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    transition: color 200ms ease;
+}
+
+.pcc-spotlight-card:hover .pcc-card-title {
+    color: var(--pink-700);
+}
+
+.pcc-card-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--pink-700);
+}
+
+.pcc-card-desc {
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.62;
+    margin-top: 0.15rem;
+}
+
+.pcc-highlights-list {
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.65rem;
+    padding-top: 0.85rem;
+    border-top: 1px dashed var(--pink-200);
+}
+
+.pcc-highlights-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.88rem;
+    color: var(--pink-ink);
+    font-weight: 520;
+}
+
+.pcc-bullet {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: var(--pink-100);
+    border: 1px solid var(--pink-300);
+    color: var(--pink-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    transition: transform 240ms ease, background 200ms ease, color 200ms ease;
+}
+
+.pcc-spotlight-card:hover .pcc-bullet {
+    background: var(--pink-700);
+    color: #fff;
+    transform: scale(1.08);
 }
 
 /* ===== Artworks Bento Grid ===== */
@@ -1610,6 +1825,172 @@ body.site-ready .hero-portrait {
 }
 
 .bento-item:hover .bento-action {
+    transform: rotate(180deg) scale(1.15);
+    background: var(--pink-700);
+}
+
+/* ===== Photography Gallery Grid ===== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.1rem, 2.4vw, 1.75rem);
+}
+
+.photo-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--rule);
+    box-shadow: 0 4px 18px rgba(161, 58, 99, 0.07);
+    cursor: pointer;
+    transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 320ms ease, border-color 260ms ease;
+    isolation: isolate;
+    user-select: none;
+}
+
+/* Photo card spans */
+.photo-featured {
+    grid-column: span 8;
+    min-height: 400px;
+}
+
+.photo-card:not(.photo-featured) {
+    grid-column: span 4;
+    min-height: 340px;
+}
+
+.photo-img-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: var(--pink-100);
+}
+
+.photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px) scale(1.015);
+    border-color: var(--pink-400);
+    box-shadow: 0 16px 36px rgba(161, 58, 99, 0.18);
+    z-index: 10;
+}
+
+.photo-card:hover .photo-img {
+    transform: scale(1.06);
+    filter: brightness(1.02);
+}
+
+/* Flower Revealing Bloom Emojis on Photo Hover */
+.photo-blooms {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.photo-blooms .photo-petal {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: transform 460ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms ease;
+    transform-origin: center;
+    filter: drop-shadow(0 3px 8px rgba(161, 58, 99, 0.35));
+    font-size: 1.45rem;
+}
+
+.php-top-left { top: -14px; left: -12px; }
+.php-top-right { top: -14px; right: -12px; }
+.php-bottom-left { bottom: -12px; left: -12px; }
+.php-bottom-right { bottom: -12px; right: -12px; }
+
+.photo-card:hover .photo-petal,
+.photo-card:focus-visible .photo-petal {
+    opacity: 1;
+}
+
+.photo-card:hover .php-top-left { transform: scale(1) rotate(-22deg) translate(2px, 2px); transition-delay: 20ms; }
+.photo-card:hover .php-top-right { transform: scale(1) rotate(26deg) translate(-2px, 2px); transition-delay: 60ms; }
+.photo-card:hover .php-bottom-left { transform: scale(1) rotate(-32deg) translate(2px, -2px); transition-delay: 100ms; }
+.photo-card:hover .php-bottom-right { transform: scale(1) rotate(28deg) translate(-2px, -2px); transition-delay: 140ms; }
+
+/* Photo Caption Overlay */
+.photo-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 1.5rem 1.4rem 1.2rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(67, 36, 47, 0.4) 30%, rgba(67, 36, 47, 0.88) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    z-index: 2;
+    transition: background 300ms ease;
+}
+
+.photo-card:hover .photo-overlay {
+    background: linear-gradient(180deg, transparent 0%, rgba(161, 58, 99, 0.45) 30%, rgba(67, 36, 47, 0.92) 100%);
+}
+
+.photo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.photo-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fbe9f0;
+    background: rgba(161, 58, 99, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 6px;
+    align-self: flex-start;
+    backdrop-filter: blur(4px);
+}
+
+.photo-title {
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    font-weight: 750;
+    color: #fff;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.photo-sub {
+    font-size: 0.86rem;
+    color: #f3cfdd;
+    line-height: 1.4;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.photo-action {
+    font-size: 1.25rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    backdrop-filter: blur(6px);
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), background 240ms ease;
+}
+
+.photo-card:hover .photo-action {
     transform: rotate(180deg) scale(1.15);
     background: var(--pink-700);
 }
@@ -2144,6 +2525,10 @@ body.site-ready .hero-portrait {
     .bento-tall { grid-column: span 6; min-height: 340px; }
     .bento-medium { grid-column: span 6; min-height: 290px; }
     .bento-wide { grid-column: span 6; min-height: 300px; }
+
+    /* Photo Grid Tablet Layout */
+    .photo-featured { grid-column: span 12; min-height: 380px; }
+    .photo-card:not(.photo-featured) { grid-column: span 6; min-height: 300px; }
 }
 
 /* Tablet Portrait & Mobile Stacked View: Hero Image next to Hero Name */
@@ -2222,6 +2607,15 @@ body.site-ready .hero-portrait {
         font-size: 1.15rem;
     }
 
+    .record-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .record-spotlight-col {
+        position: static;
+    }
+
     .hobby-cols {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2238,6 +2632,9 @@ body.site-ready .hero-portrait {
     .bento-tall { grid-column: span 12; min-height: 320px; }
     .bento-medium { grid-column: span 6; min-height: 270px; }
     .bento-wide { grid-column: span 12; min-height: 290px; }
+
+    .photo-featured { grid-column: span 12; min-height: 340px; }
+    .photo-card:not(.photo-featured) { grid-column: span 6; min-height: 280px; }
 }
 
 /* Mobile Small (560px & below) */
@@ -2333,6 +2730,26 @@ body.site-ready .hero-portrait {
         font-size: 1.12rem;
     }
 
+    /* Photo Grid Mobile 1-column layout */
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+    }
+
+    .photo-featured,
+    .photo-card:not(.photo-featured) {
+        grid-column: span 1;
+        min-height: 250px;
+    }
+
+    .photo-overlay {
+        padding: 1.1rem 1rem 0.9rem;
+    }
+
+    .photo-title {
+        font-size: 1.12rem;
+    }
+
     .hobby-cols {
         grid-template-columns: 1fr;
         gap: 1.1rem;
@@ -2344,7 +2761,7 @@ body.site-ready .hero-portrait {
     }
 
     .glyph-hero { font-size: 6.5rem; top: 4%; }
-    .glyph-about, .glyph-education, .glyph-skills, .glyph-projects, .glyph-record, .glyph-artworks, .glyph-contact { font-size: 5rem; }
+    .glyph-about, .glyph-education, .glyph-skills, .glyph-projects, .glyph-record, .glyph-artworks, .glyph-photography, .glyph-contact { font-size: 5rem; }
 }
 
 @media (max-height: 640px) {

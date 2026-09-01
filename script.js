@@ -372,7 +372,7 @@ function closeArtworkModal() {
     }
 }
 
-document.querySelectorAll('.bento-item').forEach((item) => {
+document.querySelectorAll('.bento-item, .photo-card').forEach((item) => {
     const triggerModal = () => {
         const src = item.getAttribute('data-artwork-src');
         const title = item.getAttribute('data-artwork-title');
