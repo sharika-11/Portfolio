@@ -51,12 +51,12 @@ portfolio/
 ├── DESIGN.md                            # Complete design system & token documentation
 ├── PRODUCT.md                           # Product context, goals & key audience
 ├── README.md                            # Project documentation & live links
-└── public/                              # Image assets & artwork gallery
+└── images/                              # Image assets & artwork gallery
     ├── A Moment in the Petal Storm.jpg
     ├── Autumn Trees.jpg
     ├── Boat at Sunset - Landscape View.jpg
     ├── Harvest Scenery.jpg
-    ├── Village Landscape .jpg
+    ├── Village Landscape.jpg
     ├── Waterfall & Trees.jpg
     ├── Whispers of the Cold Breeze.jpg
     └── profile-photo.jpg
