@@ -951,7 +951,7 @@ body.site-ready .hero-portrait {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem 1.75rem;
-    max-width: 880px;
+    width: 100%;
 }
 
 .fact {
@@ -993,7 +993,7 @@ body.site-ready .hero-portrait {
 
 /* ===== Education Card ===== */
 .education-card {
-    max-width: 880px;
+    width: 100%;
     background: rgba(255, 255, 255, 0.82);
     border: 1px solid var(--rule);
     border-radius: 20px;
@@ -1139,7 +1139,7 @@ body.site-ready .hero-portrait {
 /* ===== Skills index ===== */
 .skills-index {
     list-style: none;
-    max-width: 880px;
+    width: 100%;
     display: grid;
     gap: 0.75rem;
 }
